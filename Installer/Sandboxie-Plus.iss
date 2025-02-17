@@ -89,18 +89,20 @@ Name: "{userdesktop}\Sandboxie-Plus"; Filename: "{app}\SandMan.exe"; Tasks: Desk
 
 [INI]
 ; Set Sandman language.
-Filename: "{localappdata}\{#MyAppName}\{#MyAppName}.ini"; Section: "Options"; Key: "UiLanguage"; String: "{code:SandmanLanguage|{language}}"; Check: (not IsPortable) and (not IsUpgrade)
+Filename: "{localappdata}\Xanasoft\{#MyAppName}\{#MyAppName}.ini"; Section: "Options"; Key: "UiLanguage"; String: "{code:SandmanLanguage|{language}}"; Check: (not IsPortable) and (not IsUpgrade)
 Filename: "{app}\{#MyAppName}.ini"; Section: "Options"; Key: "UiLanguage"; String: "{code:SandmanLanguage|{language}}"; Check: IsPortable
 
 
 [InstallDelete]
-; Delete obsolete files as the first step of installation.
+; Delete obsolete files and folders as the first step of installation.
 Type: filesandordirs; Name: "{app}\translations"
 Type: files; Name: "{app}\SbieDrv.sys.w10"
 Type: files; Name: "{app}\SbieDrv.sys.rc4"
 Type: files; Name: "{app}\SbieIni.exe.sig"
 Type: files; Name: "{app}\libcrypto-1_1-x64.dll"
 Type: files; Name: "{app}\libssl-1_1-x64.dll"
+; No longer used since 1.15.5
+Type: dirifempty; Name: "{localappdata}\{#MyAppName}"
 ; Delete existing .pdb files before installing new ones.
 Type: files; Name: "{app}\*.pdb"
 
@@ -152,6 +154,7 @@ Filename: "{app}\Start.exe"; Parameters: "open_agent:sandman.exe"; Description: 
 [UninstallDelete]
 Type: dirifempty; Name: "{app}"
 Type: files; Name: "{localappdata}\{#MyAppName}\addons.json"
+Type: files; Name: "{localappdata}\Xanasoft\{#MyAppName}\addons.json"
 Type: dirifempty; Name: "{localappdata}\{#MyAppName}"
 Type: dirifempty; Name: "{localappdata}\Xanasoft\{#MyAppName}"
 Type: files; Name: "{localappdata}\Temp\qtsingleapp-sandma-*"
@@ -593,7 +596,7 @@ begin
   Paths := TStringList.Create;
 
   // Append file paths to the list for removal.
-  Paths.Append('{localappdata}\{#MyAppName}\{#MyAppName}.ini');
+  Paths.Append('{localappdata}\Xanasoft\{#MyAppName}\{#MyAppName}.ini');
   Paths.Append('{win}\Sandboxie.ini');
   Paths.Append('{app}\{#MyAppName}.ini');
   Paths.Append('{app}\Sandboxie.ini');
