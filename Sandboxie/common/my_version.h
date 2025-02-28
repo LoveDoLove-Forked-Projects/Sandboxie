@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2004-2020 Sandboxie Holdings, LLC 
- * Copyright 2020-2024 David Xanatos, xanasoft.com
+ * Copyright 2020-2025 David Xanatos, xanasoft.com
  *
  * This program is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 
 #define VERSION_MJR		5
 #define VERSION_MIN 	70
-#define VERSION_REV 	7
+#define VERSION_REV 	8
 #define VERSION_UPD 	0
 
 #if VERSION_UPD > 0
