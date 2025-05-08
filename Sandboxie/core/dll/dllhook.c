@@ -399,8 +399,8 @@ _FX void *SbieDll_Hook_x86(
 
 #else ! WIN_64
 
-        func = Hook_CheckChromeHook((void *)target);
-        if (func != (void *)target) {
+        func = Hook_CheckChromeHook((void *)target, (void*)GET_PEB_IMAGE_BASE);
+        if (func && func != (UCHAR*)-1) {
             SourceFunc = func;
             goto skip_e9_rewrite;
         }
@@ -1160,8 +1160,9 @@ finish:
 //---------------------------------------------------------------------------
 
 #define HOOK_STAT_CHROME        0x00000001
-#define HOOK_STAT_NO_FFS        0x00000002
-#define HOOK_STAT_SKIPPED       0x00000004
+#define HOOK_STAT_CHROME_FAIL   0x00000002
+#define HOOK_STAT_NO_FFS        0x00000004
+#define HOOK_STAT_SKIPPED       0x00000008
 #define HOOK_STAT_TRACE         0x00000100
 #define HOOK_STAT_SYSCALL       0x00000200 // ARM64 EC only
 #define HOOK_STAT_INTERESTING   0x000000FF
@@ -1173,15 +1174,21 @@ _FX void *SbieDll_HookFunc(
     // Chrome sandbox support
     //
 
-    void* OldSourceFunc = SourceFunc;
+    void* ChromeFunc = Hook_CheckChromeHook(SourceFunc, (void*)GET_PEB_IMAGE_BASE);
+    if (ChromeFunc) {
+        if (pHookStats) *pHookStats |= HOOK_STAT_CHROME;
+        if (ChromeFunc != (void*)-1)
+            SourceFunc = ChromeFunc;
+        else {
+            //SbieApi_Log(2328, _fmt1, SourceFuncName, 1);
+            if (pHookStats) *pHookStats |= HOOK_STAT_CHROME_FAIL;
+        }
+    }
 
-    SourceFunc = Hook_CheckChromeHook(SourceFunc);
-
-    if (OldSourceFunc != SourceFunc) {
-		if (pHookStats) *pHookStats |= HOOK_STAT_CHROME;
+    //if (OldSourceFunc != SourceFunc) {
     //    WCHAR* ModuleName = Trace_FindModuleByAddress((void*)module);
     //    DbgPrint("Found Chrome Hook on: %S!%s\r\n", ModuleName, SourceFuncName);
-    }
+    //}
     
 
 #ifdef _M_ARM64EC
@@ -1227,7 +1234,9 @@ _FX void *SbieDll_HookFunc(
         }
         else
         {
-
+            
+            if(strcmp(SourceFuncName, "ShellExecuteExW") != 0) // for these functions its fine
+                SbieApi_Log(2329, _fmt1, SourceFuncName, 1);
             if (pHookStats) *pHookStats |= HOOK_STAT_NO_FFS;
         }
     }
@@ -1384,8 +1393,13 @@ finish:
             SourceFuncName);
 		dbg_ptr += len;
 		dbg_size -= len;
-        if (HookStats & HOOK_STAT_CHROME) {
-            len = Sbie_snwprintf(dbg_ptr, dbg_size, L" (Chrome Hooked)");
+        if (HookStats & HOOK_STAT_CHROME_FAIL) {
+            len = Sbie_snwprintf(dbg_ptr, dbg_size, L" (Chrome Hook Unresolved)");
+            dbg_ptr += len;
+            dbg_size -= len;
+        }
+        else if (HookStats & HOOK_STAT_CHROME) {
+            len = Sbie_snwprintf(dbg_ptr, dbg_size, L" (Chrome Hook Hooked)");
             dbg_ptr += len;
             dbg_size -= len;
         }
@@ -1396,8 +1410,7 @@ finish:
             dbg_size -= len;
         }
 #endif
-		wcscat(dbg_ptr, L"\r\n");
-        SbieApi_MonitorPutMsg(MONITOR_HOOK | MONITOR_TRACE, dbg);
+        SbieApi_MonitorPutMsg(MONITOR_HOOK | MONITOR_TRACE | ((HookStats & HOOK_STAT_SKIPPED) ? MONITOR_OPEN : 0), dbg);
     }
 
     return func;

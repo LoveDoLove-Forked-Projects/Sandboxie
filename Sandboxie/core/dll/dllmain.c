@@ -150,6 +150,7 @@ const WCHAR *DllName_secur32    = L"secur32.dll";
 const WCHAR *DllName_sspicli    = L"sspicli.dll";
 const WCHAR *DllName_mscoree    = L"mscoree.dll";
 const WCHAR *DllName_ntmarta    = L"ntmarta.dll";
+const WCHAR *DllName_winmm      = L"winmm.dll";
 
 
 //---------------------------------------------------------------------------
@@ -799,7 +800,7 @@ _FX VOID Dll_Ordinal1(INJECT_DATA * inject)
 
     SbieApi_data = data;
 #ifdef _M_ARM64EC
-    // get the pointer to sys_call_list in the SYS_CALL_DATA struct
+    // get the pointer to sys_call_list in the SYSCALL_DATA struct
     SbieApi_SyscallPtr = (ULONG*)((ULONG64)data->syscall_data + sizeof(ULONG) + sizeof(ULONG) + (NATIVE_FUNCTION_SIZE * NATIVE_FUNCTION_COUNT));
 #endif
 

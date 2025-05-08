@@ -777,6 +777,7 @@ _FX PROCESS *Process_Create(
 
     proc->use_security_mode = Conf_Get_Boolean(proc->box->name, L"UseSecurityMode", 0, FALSE);
     proc->is_locked_down = proc->use_security_mode || Conf_Get_Boolean(proc->box->name, L"SysCallLockDown", 0, FALSE);
+    proc->open_all_nt = Conf_Get_Boolean(proc->box->name, L"OpenAllSysCalls", 0, FALSE);
 #ifdef USE_MATCH_PATH_EX
     proc->restrict_devices = proc->use_security_mode || Conf_Get_Boolean(proc->box->name, L"RestrictDevices", 0, FALSE);
 
@@ -789,7 +790,7 @@ _FX PROCESS *Process_Create(
     // check certificate
     //
 
-    if (!Verify_CertInfo.opt_sec && !proc->image_sbie) {
+    if (!(Verify_CertInfo.active && Verify_CertInfo.opt_sec) && !proc->image_sbie) {
 
         const WCHAR* exclusive_setting = NULL;
         if (proc->use_security_mode)
@@ -820,7 +821,7 @@ _FX PROCESS *Process_Create(
         }
     }
 
-    if (!Verify_CertInfo.opt_enc && !proc->image_sbie) {
+    if (!(Verify_CertInfo.active && Verify_CertInfo.opt_enc) && !proc->image_sbie) {
         
         const WCHAR* exclusive_setting = NULL;
         if (proc->confidential_box)

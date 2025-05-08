@@ -24,9 +24,10 @@ typedef union _SCertInfo {
             active      : 1,    // certificate is active
             expired     : 1,    // certificate is expired but may be active
             outdated    : 1,    // certificate is expired, not anymore valid for the current build
-            unused_1    : 2,    // DEPRECATED
+            reservd_1   : 2,    // DEPRECATED
             grace_period: 1,    // the certificate is expired and or outdated but we keep it valid for 1 extra month to allof wor a seamless renewal
-            reservd_2   : 2,
+            locked      : 1,
+            lock_req    : 1,
 
             type        : 5,
             level       : 3,
@@ -70,7 +71,7 @@ enum ECertType {
 //  eCert               = 0b10010,
 //  eCert               = 0b10011,
             
-//  eCertOther          = 0b10100,
+    eCertDeveloper      = 0b10100,
 //  eCert               = 0b10101, 
 //  eCert               = 0b10110,
 //  eCert               = 0b10111,
@@ -100,4 +101,5 @@ enum ECertLevel {
 #ifdef KERNEL_MODE
 extern SCertInfo Verify_CertInfo;
 NTSTATUS KphVerifyBuffer(PUCHAR Buffer, ULONG BufferSize, PUCHAR Signature, ULONG SignatureSize);
+NTSTATUS KphVerifyCurrentProcess();
 #endif
