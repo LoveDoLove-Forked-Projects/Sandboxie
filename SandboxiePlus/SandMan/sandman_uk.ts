@@ -142,7 +142,7 @@
     <message>
         <location filename="Wizards/NewBoxWizard.cpp" line="885"/>
         <source>On this page advanced sandbox options can be configured.</source>
-        <translation type="unfinished"></translation>
+        <translation>На цій сторінці можна налаштувати розширені параметри пісочниці.</translation>
     </message>
     <message>
         <source>Drop rights from Administrators and Power Users groups</source>
@@ -1242,7 +1242,7 @@ You can use %USER% to save each users sandbox to an own fodler.</oldsource>
     <message>
         <location filename="Helpers/IniHighlighter.cpp" line="525"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Опис</translation>
     </message>
     <message>
         <location filename="Helpers/IniHighlighter.cpp" line="546"/>
@@ -6125,7 +6125,7 @@ Right-click to copy</oldsource>
         <location filename="Windows/SettingsWindow.cpp" line="2820"/>
         <location filename="Windows/SettingsWindow.cpp" line="2821"/>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнено</translation>
     </message>
     <message>
         <location filename="Windows/SettingsWindow.cpp" line="2818"/>
@@ -6210,7 +6210,7 @@ You can request up to %3 evaluation certificates for each unique hardware ID.</s
     <message>
         <location filename="Windows/SettingsWindow.cpp" line="2998"/>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Головна</translation>
     </message>
     <message>
         <location filename="Windows/SettingsWindow.cpp" line="3085"/>
@@ -6280,7 +6280,7 @@ You can request up to %3 evaluation certificates for each unique hardware ID.</s
         <location filename="Windows/SettingsWindow.cpp" line="405"/>
         <location filename="Windows/SettingsWindow.cpp" line="585"/>
         <source>Select font</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вибрати шрифт</translation>
     </message>
     <message>
         <location filename="Windows/SettingsWindow.cpp" line="407"/>
@@ -8387,7 +8387,7 @@ If leader processes are defined, all others are treated as lingering processes.<
     <message>
         <location filename="Forms/OptionsWindow.ui" line="4485"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Опис</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="4493"/>
@@ -9379,7 +9379,7 @@ instead of &quot;*&quot;.</source>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="5076"/>
         <source>Privacy</source>
-        <translation type="unfinished"></translation>
+        <translation>Конфіденційність</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="5085"/>
@@ -9801,7 +9801,7 @@ Please note that this values are currently user specific and saved globally for 
     <message>
         <location filename="Forms/OptionsWindow.ui" line="5797"/>
         <source>Open Template</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Відкрити шаблон</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="5965"/>
@@ -10158,12 +10158,12 @@ Please note that this values are currently user specific and saved globally for 
     <message>
         <location filename="Forms/SettingsWindow.ui" line="148"/>
         <source>SandMan Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Параметри SandMan</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="284"/>
         <source>Notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Сповіщення</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="316"/>
@@ -10173,7 +10173,7 @@ Please note that this values are currently user specific and saved globally for 
     <message>
         <location filename="Forms/SettingsWindow.ui" line="436"/>
         <source>Show file migration progress when copying large files into a sandbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати прогрес перенесення файлів під час копіювання великих файлів у пісочницю</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="324"/>
@@ -10246,7 +10246,7 @@ Please note that this values are currently user specific and saved globally for 
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1236"/>
         <source>Select font</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибрати шрифт</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1246"/>
@@ -10318,17 +10318,17 @@ Please note that this values are currently user specific and saved globally for 
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1509"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Статус</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1514"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Версія</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1519"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Опис</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1527"/>
@@ -10338,7 +10338,7 @@ Please note that this values are currently user specific and saved globally for 
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1537"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановити</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1547"/>
@@ -10974,7 +10974,7 @@ Unlike the preview channel, it does not include untested, potentially breaking, 
     <message>
         <location filename="Forms/SettingsWindow.ui" line="429"/>
         <source>Suppress pop-up notifications when in game / presentation mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Приховувати спливаючі сповіщення під час гри / презентації</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1011"/>
@@ -11071,7 +11071,7 @@ Unlike the preview channel, it does not include untested, potentially breaking, 
     <message>
         <location filename="Forms/SettingsWindow.ui" line="3054"/>
         <source>Open Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити шаблон</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="3112"/>
