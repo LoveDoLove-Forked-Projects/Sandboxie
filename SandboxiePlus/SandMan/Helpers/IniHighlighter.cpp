@@ -65,7 +65,7 @@ namespace {
 		static const QString STYLE_VAR = QStringLiteral("style='%1'");
 		static const QString STYLE_START = QStringLiteral("style='");
 		static const QString STYLE_TOP = QStringLiteral(" style='vertical-align:top;'");
-		static const QString SEPERATOR = QStringLiteral(";");
+		static const QString SEPARATOR = QStringLiteral(";");
 	}
     
     // Common text replacements
@@ -308,7 +308,7 @@ QString CIniHighlighter::mergeHtmlStyles(const QString& baseStyle, const QString
 	if (baseStyle.contains(HtmlAttribs::STYLE_START)) {
 		QString result = baseStyle;
 		// Remove the closing quote and add the additional style
-		return result.replace(HtmlAttribs::STYLE_START, additionalStyle.mid(0, additionalStyle.length() - 1) % HtmlAttribs::SEPERATOR);
+		return result.replace(HtmlAttribs::STYLE_START, additionalStyle.mid(0, additionalStyle.length() - 1) % HtmlAttribs::SEPARATOR);
 	} else {
 		return baseStyle % " " % additionalStyle;
 	}
@@ -896,7 +896,7 @@ QString CIniHighlighter::processTextLineOptimized(const QString& text, const QSt
 			.replace(QStringLiteral("[/i]"), QStringLiteral("</i>"))
 			.replace(QStringLiteral("[u]"), QStringLiteral("<u>"))
 			.replace(QStringLiteral("[/u]"), QStringLiteral("</u>"))
-			.replace(QStringLiteral("[code]"), QStringLiteral("<code style='font-family: Consolas, monospace; background-color: #f0f0f0; padding: 1px 3px;'>"))
+			.replace(QStringLiteral("[code]"), QStringLiteral("<code style='font-family: Consolas, monospace; background-color: #ececec; color: #222222; padding: 1px 3px;'>"))
 			.replace(QStringLiteral("[/code]"), QStringLiteral("</code>"));
 	}
 
@@ -1081,16 +1081,6 @@ void CIniHighlighter::processContainer(const ContainerType& container, FunctionT
 {
 	for (const auto& item : container) {
 		func(item);
-	}
-}
-
-template<typename MapType, typename KeyType, typename FunctionType>
-void CIniHighlighter::processMapKeys(const MapType& map, const KeyType& keyPrefix, FunctionType&& func)
-{
-	for (auto it = map.constBegin(); it != map.constEnd(); ++it) {
-		if (it.key().startsWith(keyPrefix)) {
-			func(it.key(), it.value());
-		}
 	}
 }
 
@@ -1342,7 +1332,7 @@ void CIniHighlighter::processKeywordMappings(
             // Merge with existing labelStyle
             if (labelStyle.contains(HtmlAttribs::STYLE_START)) {
                 styledLabelStyle = labelStyle;
-                styledLabelStyle.replace(HtmlAttribs::STYLE_START, labelStyling.mid(0, labelStyling.length() - 1) % HtmlAttribs::SEPERATOR);
+                styledLabelStyle.replace(HtmlAttribs::STYLE_START, labelStyling.mid(0, labelStyling.length() - 1) % HtmlAttribs::SEPARATOR);
             }
             else {
                 styledLabelStyle += " " % labelStyling;
@@ -1360,6 +1350,53 @@ void CIniHighlighter::processKeywordMappings(
             tooltip += HtmlTags::TD_TAG % valuePrefix % typeText % HtmlTags::TD_TR_END;
         }
     }
+}
+
+template<typename KeywordInfoType>
+QStringList getVisibleLabelsWithActionHiding(
+	const QString& displayText,
+	const QList<KeywordInfoType>& effectiveMappings)
+{
+	QStringList typeLabels;
+	QList<QPair<QString, QString>> matchedKeywords;
+	QHash<QString, QString> keywordActions;
+
+	for (const KeywordInfoType& keywordInfo : effectiveMappings) {
+		if (displayText.contains(keywordInfo.keyword)) {
+			matchedKeywords.append(qMakePair(keywordInfo.keyword, keywordInfo.displayName));
+			if (!keywordInfo.action.isEmpty()) {
+				keywordActions.insert(keywordInfo.keyword, keywordInfo.action);
+			}
+		}
+	}
+
+	for (const auto& pair : matchedKeywords) {
+		const QString& keyword = pair.first;
+		const QString& displayName = pair.second;
+		bool isHidden = false;
+
+		if (keywordActions.contains(keyword) && keywordActions[keyword].contains(keyword)) {
+			isHidden = true;
+		}
+		if (!isHidden) {
+			for (auto it = keywordActions.constBegin(); it != keywordActions.constEnd(); ++it) {
+				if (it.key() == keyword)
+					continue;
+				for (const QChar& c : it.value()) {
+					if (QString(c) == keyword) {
+						isHidden = true;
+						break;
+					}
+				}
+				if (isHidden)
+					break;
+			}
+		}
+		if (!isHidden && !displayName.isEmpty()) {
+			typeLabels.append(displayName);
+		}
+	}
+	return typeLabels;
 }
 
 void CIniHighlighter::processMappingsOptimized(QString& tooltip, const SettingInfo& info,
@@ -1404,14 +1441,8 @@ void CIniHighlighter::processMappingsOptimized(QString& tooltip, const SettingIn
 
 		// 2. Map the remaining flags to labels as before
 		auto effectiveMappings = getEffectiveMappingsWithActionFallback(requirementsData, currentLang);
-		QStringList typeLabels;
-
-		// Collect all matched keywords and their actions
-		for (const auto& keywordInfo : effectiveMappings) {
-			if (req.contains(keywordInfo.keyword)) {
-				typeLabels.append(keywordInfo.displayName);
-			}
-		}
+		QStringList typeLabels = getVisibleLabelsWithActionHiding<KeywordInfo<KeywordType::Requirements>>(req, effectiveMappings);
+		
 
 		// 3. Append literal labels
 		typeLabels.append(literalLabels);
@@ -1424,7 +1455,7 @@ void CIniHighlighter::processMappingsOptimized(QString& tooltip, const SettingIn
 			if (!labelStyling.isEmpty()) {
 				if (labelStyle.contains(HtmlAttribs::STYLE_START)) {
 					styledLabelStyle = labelStyle;
-					styledLabelStyle.replace(HtmlAttribs::STYLE_START, labelStyling.mid(0, labelStyling.length() - 1) % HtmlAttribs::SEPERATOR);
+					styledLabelStyle.replace(HtmlAttribs::STYLE_START, labelStyling.mid(0, labelStyling.length() - 1) % HtmlAttribs::SEPARATOR);
 				}
 				else {
 					styledLabelStyle += " " % labelStyling;
@@ -1767,7 +1798,16 @@ const CIniHighlighter::TooltipThemeCache& CIniHighlighter::getTooltipThemeCache(
 	static TooltipThemeCache themeCache;
 
 	if (!themeCache.valid) {
-		themeCache.darkMode = theConf->GetBool("Options/DarkTheme", false);
+		bool bDark;
+		int iDark = theConf->GetInt("Options/UseDarkTheme", 2);
+		if (iDark == 2) {
+			QSettings settings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", QSettings::NativeFormat);
+			bDark = (settings.value("AppsUseLightTheme").toInt() == 0);
+		}
+		else
+			bDark = (iDark == 1);
+
+		themeCache.darkMode = bDark;
 		themeCache.bgColor = themeCache.darkMode ? QStringLiteral("#2b2b2b") : QStringLiteral("#ffffff");
 		themeCache.textColor = themeCache.darkMode ? QStringLiteral("#e0e0e0") : QStringLiteral("#000000");
 
@@ -1780,6 +1820,14 @@ const CIniHighlighter::TooltipThemeCache& CIniHighlighter::getTooltipThemeCache(
 	}
 
 	return themeCache;
+}
+
+void CIniHighlighter::ClearThemeCache()
+{
+	// Access the static variable inside getTooltipThemeCache()
+	// by calling the function and using a const_cast to modify it.
+	auto& cache = const_cast<TooltipThemeCache&>(getTooltipThemeCache());
+	cache.valid = false;
 }
 
 QStringList CIniHighlighter::GetCompletionCandidates()
