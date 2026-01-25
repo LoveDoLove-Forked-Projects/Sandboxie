@@ -31,6 +31,7 @@ public:
 
 	void		ThreadFunc();
 	void		TimerProc();
+	struct SBoxBorder* GetBorderData() { return m; }
 
 protected:
 
@@ -42,5 +43,8 @@ private:
 	void		GetActiveWindowRect(struct HWND__* hWnd, struct tagRECT* rect);
 	bool		IsMounseOnTitle(struct HWND__* hWnd, struct tagRECT* rect, const struct tagRECT* Desktop);
 	bool		CheckMousePointer();
+
+	void		DrawAllSandboxedBorders();
+	bool		CheckGlobalAllBordersMode();
 };
 

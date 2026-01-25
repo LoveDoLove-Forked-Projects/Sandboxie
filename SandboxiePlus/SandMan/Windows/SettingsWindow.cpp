@@ -359,6 +359,7 @@ CSettingsWindow::CSettingsWindow(QWidget* parent)
 	
 	connect(ui.chkShellMenu, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkAlwaysDefault, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
+	connect(ui.chkRememberLast, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkShellMenu2, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkShellMenu3, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkShellMenu4, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
@@ -1159,6 +1160,7 @@ void CSettingsWindow::LoadSettings()
 	ui.chkShellMenu3->setChecked(CSbieUtils::HasContextMenu3());
 	ui.chkShellMenu4->setChecked(CSbieUtils::HasContextMenu4());
 	ui.chkAlwaysDefault->setChecked(theConf->GetBool("Options/RunInDefaultBox", false));
+	ui.chkRememberLast->setChecked(theConf->GetBool("Options/RememberLastBox", false));
 
 	ui.cmbDPI->setCurrentIndex(theConf->GetInt("Options/DPIScaling", 1));
 
@@ -1286,7 +1288,7 @@ void CSettingsWindow::LoadSettings()
 		ui.chkObjCb->setChecked(theAPI->GetGlobalSettings()->GetBool("EnableObjectFiltering", true));
 		ui.chkWin32k->setChecked(theAPI->GetGlobalSettings()->GetBool("EnableWin32kHooks", true));
 		ui.chkSbieLogon->setChecked(theAPI->GetGlobalSettings()->GetBool("SandboxieLogon", false));
-		ui.chkSbieAll->setChecked(theAPI->GetGlobalSettings()->GetBool("SandboxieAllGroup", false));
+		ui.chkSbieAll->setChecked(theAPI->GetGlobalSettings()->GetBool("SandboxieAllGroup", true));
 		ui.chkSbieUAC->setChecked(theAPI->GetGlobalSettings()->GetBool("UseSandboxieUAC", true));
 
 		ui.treeImport->clear();
@@ -1745,6 +1747,7 @@ void CSettingsWindow::SaveSettings()
 			CSbieUtils::RemoveContextMenu4();
 	}
 	theConf->SetValue("Options/RunInDefaultBox", ui.chkAlwaysDefault->isChecked());
+	theConf->SetValue("Options/RememberLastBox", ui.chkRememberLast->isChecked());
 
 	theConf->SetValue("Options/CheckSilentMode", ui.chkSilentMode->isChecked());
 	theConf->SetValue("Options/ShowMigrationProgress", ui.chkCopyProgress->isChecked());
@@ -1855,7 +1858,7 @@ void CSettingsWindow::SaveSettings()
 				WriteAdvancedCheck(ui.chkObjCb, "EnableObjectFiltering", "", "n");
 				WriteAdvancedCheck(ui.chkWin32k, "EnableWin32kHooks", "", "n");
 				WriteAdvancedCheck(ui.chkSbieLogon, "SandboxieLogon", "y", "");
-				WriteAdvancedCheck(ui.chkSbieAll, "SandboxieAllGroup", "y", "");
+				WriteAdvancedCheck(ui.chkSbieAll, "SandboxieAllGroup", "", "n");
 				WriteAdvancedCheck(ui.chkSbieUAC, "UseSandboxieUAC", "", "n");
 
 				if (m_FeaturesChanged) {

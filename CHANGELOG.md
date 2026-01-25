@@ -5,17 +5,57 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
-## [1.16.9 / 5.71.9] - 2025-11-
+
+
+
+## [1.17.0 / 5.72.0] - 2026-01-??
+
+### Added
+- added icons to Sandboxie service applications [#5160](https://github.com/sandboxie-plus/Sandboxie/issues/5160#issuecomment-3706138019)
+- added name of sandbox in the border [#3746](https://github.com/sandboxie-plus/Sandboxie/issues/3746)
+- added glboal option "ForceBoxDocs=y" allows to force all programs opening a file from a Boxed Path to the apropriate sandbox
+- added new box border mode 'all' when active the border is shown for all windows of sandboxed processes not only for the one in focus
+
+### Changed
+- validated compatibility with Windows build 28020 and updated DynData
+- when 'UseCreateToken=y', we always use 'CopyTokenAttributes=y' to fix UWP issues
+  - to force 'UseCreateToken=y', 'SandboxieAllGroup=y' is the new default
+- 'NoUntrustedToken=y' can now be set in box options
+- reworked LPC server implementation in SbieSvc, todo: switch to ALPC
 
 ### Fixed
-- fixed incompatibility with thunderbird 146 
+- fixed failure to mount registry when starting a UWP application sandboxed
+- fixed The API CryptUnprotectData always returns a wrong ppszDataDescr [#5191](https://github.com/sandboxie-plus/Sandboxie/issues/5191)
+
+
+
+## [1.16.9 / 5.71.9] - 2026-01-02
+
+### Added
+- added Norwegian Bokmål translations [#5141](https://github.com/sandboxie-plus/Sandboxie/issues/5141) (thanks divinity76)
+- added user interface: highlight last used box [#5054](https://github.com/sandboxie-plus/Sandboxie/issues/5054)
+
+### Changed
+- added 'ClosedClsid={9BA05972-F6A8-11CF-A442-00A0C90A8F39}' to the default COM template to block ShellWindows
+
+### Fixed
+- fixed incompatibility with Thunderbird 146
+- fixed no sound in confidential boxes without the "less confidential template"
+- fixed issues with proxy tester (failed on non-English Windows due to the localization of ping.exe)
+- fixed WinMerge keeps freezing because of registry reading issues [#5122](https://github.com/sandboxie-plus/Sandboxie/issues/5122)
+- fixed running Firefox under Sandboxie causes AppModel-Runtime error(s) in Event Viewer [#5135](https://github.com/sandboxie-plus/Sandboxie/issues/5135)
+- fixed Tor Browser tabs crash in highest security level [#5116](https://github.com/sandboxie-plus/Sandboxie/issues/5116)
+- fixed Chrome Portable window tooltip gets stuck [#5051](https://github.com/sandboxie-plus/Sandboxie/issues/5051)
+- fixed BSOD (0x50) in SbieDrv.sys during high-load GPU process creation on Windows Server 2022 [#5149](https://github.com/sandboxie-plus/Sandboxie/issues/5149)
+- fixed OfficeClickToRun.exe always crash, WINWORD.EXE can not work properly [#5153](https://github.com/sandboxie-plus/Sandboxie/issues/5153)
+- fixed prolonged lag when uninstalling/deleting software installed exclusively within the sandbox environment [#5028](https://github.com/sandboxie-plus/Sandboxie/issues/5028)
 
 
 
 ## [1.16.8 / 5.71.8] - 2025-11-24
 
 ### Added
-- added file search/filter to file panel can be opened with Ctrl+F in the file panel
+- added file search/filter to file panel, can be opened with Ctrl+F in the file panel
 - added UI for 'ProtectAdminOnly=y/n'
 
 ### Fixed
@@ -30,13 +70,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - reverted default 'UseWin32kHooks=y' back to 'n' as it caused issues with other apps
-- FIXED SECURITY ISSUE ID-31 improved named syscall invocation when using WoW64 (thanks pentester.z)
+- FIXED SECURITY ISSUE ID-31: improved named syscall invocation when using WoW64 (thanks pentester.z)
 
 ### Fixed
 - fixed 'OpenWndStation=y' not working with 'SandboxieAllGroup=y'
-- FIXED SECURITY ISSUE ID-28 missing parameter validation in SbieIniServer (thanks DepthFirstDisclosures)
-- FIXED SECURITY ISSUE ID-29 issue with certificate parsing (thanks pentester.z)
-- FIXED SECURITY ISSUE ID-30 an issue retrieving driver info (thanks pentester.z)
+- FIXED SECURITY ISSUE ID-28: missing parameter validation in SbieIniServer (thanks DepthFirstDisclosures)
+- FIXED SECURITY ISSUE ID-29: issue with certificate parsing (thanks pentester.z)
+- FIXED SECURITY ISSUE ID-30: an issue retrieving driver info (thanks pentester.z)
 - fixed potential handle leak in SbieDll.dll related to SbieApi_DeviceHandle [#5097](https://github.com/sandboxie-plus/Sandboxie/issues/5097)
 
 
