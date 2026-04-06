@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2004-2020 Sandboxie Holdings, LLC 
- * Copyright 2020-2025 David Xanatos, xanasoft.com
+ * Copyright 2020-2026 David Xanatos, xanasoft.com
  *
  * This program is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@
   #define MY_VERSION_BINARY VERSION_MJR,VERSION_MIN,VERSION_REV
   #define MY_VERSION_STRING STR(VERSION_MJR.VERSION_MIN.VERSION_REV)
 #endif
-#define MY_ABI_VERSION  0x57170
+#define MY_ABI_VERSION  0x57230
 
 // These #defines are used by either Resource Compiler or NSIS installer
 #define SBIE_INSTALLER_PATH		"..\\Bin\\"
