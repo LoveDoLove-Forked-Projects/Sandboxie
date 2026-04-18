@@ -4,10 +4,50 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+
+
+
+## [1.17.5 / 5.72.5] - 2026-04-??
+
+### Added
+- added workaround for SBIE2205 OpenDesktop when requesting default desktop
+
+### Fixed
+- fixed box rename failing with "The parameter is incorrect" since 1.17.3, caused by multi-line section content being rejected by the new ContainsCRLF check in CIniFile::AddValue
+- fixed renamed sandbox not being re-selected in the UI after a successful rename
+- fixed sandboxed app tray icons not showing with `OpenWinClass=*` by proxying `Shell_NotifyIcon`; can be disabled with `UseShellNotifyIconProxy` (default enabled, supports `process` and `!process` selectors)
+
+
+
+## [1.17.4 / 5.72.4] - 2026-04-12
+
+### Added
+- added 'BlockLocalLoop=y' to block local loopback connections
+- added Electron detection and SBIE2189 message with a troubleshooting option to set 'SpecialImage=chrome,program.exe' for the encountered application
+- added automated Electron application detection heuristic, enabled by default; it can be disabled with 'UseElectronDetection=n'
+
+### Changed
+- hardware info protection can now be switched per process [#5271](https://github.com/sandboxie-plus/Sandboxie/issues/5271)
+- driver now verifies certificates using UTC time instead of local time [#4241](https://github.com/sandboxie-plus/Sandboxie/issues/4241) [#5316](https://github.com/sandboxie-plus/Sandboxie/issues/5316)
+
+### Fixed
+- fixed issue with volatile configuration update
+- fixed, added missing WaitServiceState, resolves "LINE fails to launch" / NO_SIGNATURE [#5306](https://github.com/sandboxie-plus/Sandboxie/issues/5306)
+- fixed release Ipc_Handles_CritSec on Ipc_GetName failure in NtQueryDirectoryObject [#5326](https://github.com/sandboxie-plus/Sandboxie/pull/5326)
+- fixed the user interfaces of all WebView2 applications built with Tauri are unresponsive [#5327](https://github.com/sandboxie-plus/Sandboxie/issues/5327)
+- fixed race condition BSoD during driver unload [#5329](https://github.com/sandboxie-plus/Sandboxie/pull/5329)
+- fixed Key_MergeSubkeys logic verification [#5301](https://github.com/sandboxie-plus/Sandboxie/issues/5301)
+- fixed issue with File_WaitNamedPipe in Application Compartment mode
+
+### Removed
+- removed deprecated 'UseElectronWorkaround=y' option
+
+
+
 ## [1.17.3 / 5.72.3] - 2026-03-29
 
 ### Added
-- added configurable window location settings to control which monitor main, non-main, file recovery, and notification windows open on, including a selectable fallback mode. [#4536](https://github.com/sandboxie-plus/Sandboxie/issues/4536) [#5238](https://github.com/sandboxie-plus/Sandboxie/pull/5238)
+- added configurable window location settings to control which monitor main, non-main, file recovery, and notification windows open on, including a selectable fallback mode [#4536](https://github.com/sandboxie-plus/Sandboxie/issues/4536) [#5238](https://github.com/sandboxie-plus/Sandboxie/pull/5238)
   - Global Settings > Interface Config > Window Options
 - added "Label only" border mode option (`onlbl`, `ttllbl`, `alllbl`) that hides the colored border frame and shows only the sandbox name (or alias) label [#5239](https://github.com/sandboxie-plus/Sandboxie/pull/5239)
 - added MIDI workaround template for Windows 11 [#5183](https://github.com/sandboxie-plus/Sandboxie/issues/5183) [#5203](https://github.com/sandboxie-plus/Sandboxie/issues/5203#issuecomment-3938495163) (thanks xsmolasses)
@@ -41,7 +81,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - fixed WOW64 registry view inheritance for relative key opens in `SbieDll`, preserving parent `KEY_WOW64_32KEY/KEY_WOW64_64KEY` semantics across `NtOpenKey`/`NtCreateKey` [#5171](https://github.com/sandboxie-plus/Sandboxie/issue/7171) [#5244](https://github.com/sandboxie-plus/Sandboxie/pull/5244)
 - fixed handle leak in `ScanStartMenu`: `IShellLinkW` and `IPersistFile` COM interfaces were never released in `ResolveShortcut`, permanently retaining handles (file, registry, icon) for every `.lnk` shortcut scanned; replaced raw pointers with `CComPtr` to ensure `Release()` on all exit paths
 - fixed parsing logic for `ClosedClsid` and `ClosedRT` settings [#5263](https://github.com/sandboxie-plus/Sandboxie/pull/5263)
-- FIXED SECURITY ISSUE ID-32: EditPassword Hash Entropy Loss, new passwords will ne salted SHA256 and base64 encoded
+- FIXED SECURITY ISSUE ID-32: EditPassword Hash Entropy Loss, new passwords will be salted SHA-256 and Base64-encoded
   - Note: the fix only takes effect when the password is being set, existing passwords remain weak
 - fixed Local Denial of Service (DoS) Vulnerability Exploitable by Sandboxed Process CVE-2026-32603 (reported by sammy12342)
 - fixed Sandboxie-Plus EditAdminOnly Bypass via INI CRLF Injection (reported by sammy12342)
@@ -50,6 +90,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - fixed name validation in ProcessServer handlers (reported by Yanchon918s)
 - fixed parameter validation in NamedPipeServer (reported by Yanchon918s)
 - fixed file integrity issues with updater (reported by sammy12342)
+
 
 
 ## [1.17.2 / 5.72.2] - 2026-02-18

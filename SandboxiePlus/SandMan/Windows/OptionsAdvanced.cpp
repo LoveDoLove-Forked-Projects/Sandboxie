@@ -21,9 +21,12 @@ void COptionsWindow::CreateAdvanced()
 	connect(ui.txtSingleMemory, SIGNAL(textChanged(const QString&)), this, SLOT(OnAdvancedChanged()));
 	connect(ui.txtTotalMemory, SIGNAL(textChanged(const QString&)), this, SLOT(OnAdvancedChanged()));
 	connect(ui.txtTotalNumber, SIGNAL(textChanged(const QString&)), this, SLOT(OnAdvancedChanged()));
+	connect(ui.txtCpuRateLimit, SIGNAL(textChanged(const QString&)), this, SLOT(OnAdvancedChanged()));
 
 	connect(ui.chkUseSbieDeskHack, SIGNAL(clicked(bool)), this, SLOT(OnAdvancedChanged()));
 	connect(ui.chkUseSbieWndStation, SIGNAL(clicked(bool)), this, SLOT(OnAdvancedChanged()));
+
+	connect(ui.chkUseElectronDetection, SIGNAL(clicked(bool)), this, SLOT(OnAdvancedChanged()));
 
 	connect(ui.chkAddToJob, SIGNAL(clicked(bool)), this, SLOT(OnAdvancedChanged()));
 	connect(ui.chkProtectSCM, SIGNAL(clicked(bool)), this, SLOT(OnAdvancedChanged()));
@@ -194,8 +197,14 @@ void COptionsWindow::LoadAdvanced()
 	if (iTotalNumber > 0x0LL && iTotalNumber <= 0xFFFFFFFFLL)
 		ui.txtTotalNumber->setText(QString::number(iTotalNumber));
 
+	qint64 iCpuRateLimit = m_pBox->GetNum64("CpuRateLimit", 0);
+	if (iCpuRateLimit > 0x0LL && iCpuRateLimit <= 100LL)
+		ui.txtCpuRateLimit->setText(QString::number(iCpuRateLimit));
+
 	ui.chkUseSbieDeskHack->setChecked(m_pBox->GetBool("UseSbieDeskHack", true));
 	ui.chkUseSbieWndStation->setChecked(m_pBox->GetBool("UseSbieWndStation", true));
+
+	ui.chkUseElectronDetection->setChecked(m_pBox->GetBool("UseElectronDetection", true));
 
 	ui.chkProtectSCM->setChecked(!m_pBox->GetBool("UnrestrictedSCM", false));
 	ui.chkRestrictServices->setChecked(!m_pBox->GetBool("RunServicesAsSystem", false));
@@ -439,6 +448,8 @@ void COptionsWindow::SaveAdvanced()
 	WriteAdvancedCheck(ui.chkUseSbieDeskHack, "UseSbieDeskHack", "", "n");
 	WriteAdvancedCheck(ui.chkUseSbieWndStation, "UseSbieWndStation", "", "n");
 
+	WriteAdvancedCheck(ui.chkUseElectronDetection, "UseElectronDetection", "", "n");
+
 	WriteAdvancedCheck(ui.chkAddToJob, "NoAddProcessToJob", "", "y");
 	WriteAdvancedCheck(ui.chkProtectSCM, "UnrestrictedSCM", "", "y");
 	WriteAdvancedCheck(ui.chkNestedJobs, "AllowBoxedJobs", "y", "");
@@ -460,6 +471,12 @@ void COptionsWindow::SaveAdvanced()
 		WriteText("ProcessNumberLimit", QString::number(iTotalNumber));
 	else
 		m_pBox->DelValue("ProcessNumberLimit");
+
+	qint64 iCpuRateLimit = !ui.txtCpuRateLimit->text().isEmpty() ? ui.txtCpuRateLimit->text().toLongLong() : -1;
+	if (iCpuRateLimit > 0x0LL && iCpuRateLimit <= 100LL)
+		WriteText("CpuRateLimit", QString::number(iCpuRateLimit));
+	else
+		m_pBox->DelValue("CpuRateLimit");
 
 	WriteAdvancedCheck(ui.chkRestrictServices, "RunServicesAsSystem", "", "y");
 	WriteAdvancedCheck(ui.chkElevateRpcss, "RunRpcssAsSystem", "y", "");
@@ -807,6 +824,15 @@ void COptionsWindow::UpdateJobOptions()
 		ui.lblTotalNumber->setText("");
 	}
 	ui.txtTotalNumber->setEnabled(bUseJobObject);
+
+	qint64 iCpuRateLimit = ui.txtCpuRateLimit->text().toLongLong();
+	if (!(iCpuRateLimit > 0x0LL && iCpuRateLimit <= 100LL)) {
+		ui.lblCpuRateLimit->setText(tr("unlimited"));
+	}
+	else {
+		ui.lblCpuRateLimit->setText(tr("%"));
+	}
+	ui.txtCpuRateLimit->setEnabled(bUseJobObject);
 
 
 	ui.chkRestartOnPCA->setEnabled(!ui.chkForceRestart->isChecked());
