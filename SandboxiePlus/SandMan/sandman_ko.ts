@@ -2635,7 +2635,7 @@ Note: The update check is often behind the latest GitHub release to ensure that 
     <message>
         <location filename="Windows/OptionsAdvanced.cpp" line="833"/>
         <source>%</source>
-        <translation type="unfinished">%</translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="Windows/OptionsAdvanced.cpp" line="1005"/>
@@ -4437,7 +4437,7 @@ Unlike the preview channel, it does not include untested, potentially breaking, 
     <message>
         <location filename="SandMan.cpp" line="1508"/>
         <source>Boxes: %1 (%2 active)  |  Processes: %3  |  Memory: %4</source>
-        <translation type="unfinished"></translation>
+        <translation>박스: %1 (%2 활성)  |  프로세스: %3  |  메모리: %4</translation>
     </message>
     <message>
         <location filename="SandMan.cpp" line="1699"/>
@@ -5737,17 +5737,17 @@ This file is part of Sandboxie and all changed done to it will be reverted next 
     <message>
         <location filename="Models/SbieModel.cpp" line="840"/>
         <source>CPU</source>
-        <translation type="unfinished"></translation>
+        <translation>CPU</translation>
     </message>
     <message>
         <location filename="Models/SbieModel.cpp" line="841"/>
         <source>Memory</source>
-        <translation type="unfinished"></translation>
+        <translation>메모리</translation>
     </message>
     <message>
         <location filename="Models/SbieModel.cpp" line="842"/>
         <source>Private Bytes</source>
-        <translation type="unfinished"></translation>
+        <translation>전용 바이트</translation>
     </message>
     <message>
         <location filename="Models/SbieModel.cpp" line="843"/>
@@ -6445,25 +6445,26 @@ This file is part of Sandboxie and all changed done to it will be reverted next 
         <location filename="Views/SbieView.cpp" line="638"/>
         <source>    CPU: %1  |  Memory: %2  |  Private Bytes: %3
 </source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>    CPU: %1  |  메모리: %2  |  전용 바이트: %3</translatorcomment>
+        <translation>    CPU: %1  |  Memory: %2  |  Private Bytes: %3</translation>
     </message>
     <message>
         <location filename="Views/SbieView.cpp" line="641"/>
         <source>    Sandbox: %1
 </source>
-        <translation type="unfinished"></translation>
+        <translation>    샌드박스: %1</translation>
     </message>
     <message>
         <location filename="Views/SbieView.cpp" line="643"/>
         <source>    Image: %1
 </source>
-        <translation type="unfinished"></translation>
+        <translation>    이미지: %1</translation>
     </message>
     <message>
         <location filename="Views/SbieView.cpp" line="646"/>
         <source>    Start Time: %1
 </source>
-        <translation type="unfinished"></translation>
+        <translation>    시작 시간: %1</translation>
     </message>
     <message>
         <location filename="Views/SbieView.cpp" line="1113"/>
@@ -6976,17 +6977,17 @@ This file is part of Sandboxie and all changed done to it will be reverted next 
         <translation>%1 템플릿 추가</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3660"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3661"/>
         <source>Autocomplete Consent Required</source>
         <translation>자동 완성 동의 필요</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3662"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3663"/>
         <source>Autocomplete feature requires your consent to proceed.</source>
         <translation>자동 완성 기능을 사용하려면 사용자의 동의가 필요합니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3664"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3665"/>
         <source>If you are unsure about the settings displayed in the autocomplete popup, we strongly recommend consulting the software&apos;s documentation or source code before proceeding. Enabling this feature without proper understanding may lead to unintended consequences, for which you will be solely responsible.
 
 Choose autocomplete mode:
@@ -6999,32 +7000,32 @@ Choose autocomplete mode:
 입력하는 동안 %1: 입력하는 동안 제안 사항을 자동으로 완료합니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3672"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3673"/>
         <source>Manual</source>
         <translation>수동</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3673"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3674"/>
         <source>Triggers autocomplete suggestions with %1.</source>
         <translation>%1로 자동 완성 제안을 트리거합니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3675"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3676"/>
         <source>While Typing</source>
         <translation>타이핑하는 동안</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3676"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3677"/>
         <source>Triggers autocomplete suggestions while typing.</source>
         <translation>입력하는 동안 자동 완성 제안을 트리거합니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3679"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3680"/>
         <source>Keeps autocomplete suggestions disabled.</source>
         <translation>자동 완성 제안을 비활성화합니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3678"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3679"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
@@ -7101,49 +7102,49 @@ Do you wish to enable autocomplete?</source>
         <translation>볼륨이 연결되지 않음</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3222"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3223"/>
         <source>This supporter certificate has expired, please &lt;a href=&quot;%1&quot;&gt;get an updated certificate&lt;/a&gt;.</source>
         <translation>이 후원자 인증서가 만료되었습니다. &lt;href=&quot;%1&quot;&gt;업데이트된 인증서를 받아주세요&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3227"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3228"/>
         <source>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;For the current build Plus features remain enabled&lt;/font&gt;, but you no longer have access to Sandboxie-Live services, including compatibility updates and the online troubleshooting database.</source>
         <translation>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;현재 빌드 플러스 기능은 계속 활성화되어 있지만&lt;/font&gt;, 호환성 업데이트와 온라인 문제 해결 데이터베이스를 포함한 Sandboxie 라이브 서비스에 더 이상 액세스할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3274"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3275"/>
         <source>; eligible Patreons can always &lt;a href=&quot;https://xanasoft.com/get-supporter-certificate/&quot;&gt;obtain an updated certificate&lt;/a&gt; from xanasoft.com</source>
         <translation>; 자격을 갖춘 후원자는 언제든지 xanasoft.com에서 &lt;a href=&quot;https://xanasoft.com/get-supporter-certificate/&quot;&gt;업데이트된 인증서&lt;/a&gt;를 받을 수 있습니다</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3302"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3303"/>
         <source>&lt;b&gt;You have used %1/%2 evaluation certificates. No more free certificates can be generated.&lt;/b&gt;</source>
         <translation>&lt;b&gt;%1/%2개의 평가 인증서를 사용했습니다. 더 이상 사용 가능한 인증서를 생성할 수 없습니다.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3304"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3305"/>
         <source>&lt;b&gt;&lt;a href=&quot;_&quot;&gt;Get a free evaluation certificate&lt;/a&gt; and enjoy all premium features for %1 days.&lt;/b&gt;</source>
         <translation>&lt;b&gt;&lt;a href=&quot;_&quot;&gt;무료 평가 인증서를 받고&lt;/a&gt; %1일 동안 모든 프리미엄 기능을 누리세요.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3305"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3306"/>
         <source>You can request a free %1-day evaluation certificate up to %2 times per hardware ID.</source>
         <translation>하드웨어 ID당 %2회까지 무료 %1일 평가 인증서를 요청할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3561"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3562"/>
         <source>
 This is a temporary Patreon certificate, valid for 3 months. Once it nears expiration, you can obtain a new certificate online that will be valid for the full term.</source>
         <translation>
 이것은 3개월 동안 유효한 임시 Patreon 인증서입니다. 만료 시점이 가까워지면 온라인에서 전체 기간 동안 유효한 새 인증서를 발급받을 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3599"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3600"/>
         <source>A mandatory security update for your Sandboxie-Plus Supporter Certificate is required. Would you like to download the updated certificate now?</source>
         <translation>Sandboxie-Plus 후원자 인증서에 대한 필수 보안 업데이트가 필요합니다. 지금 업데이트된 인증서를 다운로드하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3600"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3601"/>
         <source>Auto update in future</source>
         <translation>향후 자동 업데이트</translation>
     </message>
@@ -7152,7 +7153,7 @@ This is a temporary Patreon certificate, valid for 3 months. Once it nears expir
         <translation type="vanished">하나의 하드웨어 ID에 대해 %1일 무료 평가 인증서를 %2회까지 요청할 수 있습니다</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3235"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3236"/>
         <source>This supporter certificate will &lt;font color=&apos;red&apos;&gt;expire in %1 days&lt;/font&gt;, please &lt;a href=&quot;%2&quot;&gt;get an updated certificate&lt;/a&gt;.</source>
         <oldsource>This supporter certificate has expired, please &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-renew-cert&quot;&gt;get an updated certificate&lt;/a&gt;.</oldsource>
         <translation>이 후원자 인증서는 %1일 후에 &lt;font color=&apos;red&apos;&gt;만료되며, &lt;a href=&quot;%2&quot;&gt;업데이트된 인증서를 받아주세요&lt;/a&gt;.</translation>
@@ -7170,118 +7171,118 @@ This is a temporary Patreon certificate, valid for 3 months. Once it nears expir
         <translation type="vanished">만료 날짜: %1일</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3270"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3271"/>
         <source>Expires in: %1 days</source>
         <oldsource>Expires: %1 Days ago</oldsource>
         <translation>만료: %1일 전</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3272"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3273"/>
         <source>Expired: %1 days ago</source>
         <translation>만료일: %1일 전</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3286"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3287"/>
         <source>Options: %1</source>
         <translation>옵션: %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3289"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3290"/>
         <source>Security/Privacy Enhanced &amp; App Boxes (SBox): %1</source>
         <translation>보안/개인 정보 보호 강화 및 앱 박스 (SBox): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3289"/>
         <location filename="Windows/SettingsWindow.cpp" line="3290"/>
         <location filename="Windows/SettingsWindow.cpp" line="3291"/>
         <location filename="Windows/SettingsWindow.cpp" line="3292"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3293"/>
         <source>Enabled</source>
         <translation>사용함</translation>
     </message>
     <message>
         <location filename="Windows/SettingsWindow.cpp" line="362"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3289"/>
         <location filename="Windows/SettingsWindow.cpp" line="3290"/>
         <location filename="Windows/SettingsWindow.cpp" line="3291"/>
         <location filename="Windows/SettingsWindow.cpp" line="3292"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3293"/>
         <source>Disabled</source>
         <translation>사용 안 함</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3290"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3291"/>
         <source>Encrypted Sandboxes (EBox): %1</source>
         <translation>암호화된 샌드박스 (EBox): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3291"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3292"/>
         <source>Network Interception (NetI): %1</source>
         <translation>네트워크 차단 (NetI): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3292"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3293"/>
         <source>Sandboxie Desktop (Desk): %1</source>
         <translation>Sandboxie 데스크톱 (데스크): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3323"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3324"/>
         <source>This does not look like a Sandboxie-Plus Serial Number.&lt;br /&gt;If you have attempted to enter the UpdateKey or the Signature from a certificate, that is not correct, please enter the entire certificate into the text area above instead.</source>
         <translation>이것은 Sandboxie-Plus 일련 번호처럼 보이지 않습니다.&lt;br /&gt;인증서의 UpdateKey 또는 서명을 입력하려고 시도했지만 올바르지 않은 경우, 위의 텍스트 영역에 전체 인증서를 대신 입력하세요.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3330"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3331"/>
         <source>You are attempting to use a feature Upgrade-Key without having entered a pre-existing supporter certificate. Please note that this type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b) requires you to have a pre-existing valid supporter certificate; it is useless without one.&lt;br /&gt;If you want to use the advanced features, you need to obtain both a standard certificate and the feature upgrade key to unlock advanced functionality.</source>
         <oldsource>You are attempting to use a feature Upgrade-Key without having entered a preexisting supporter certificate. Please note that these type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b&gt;) require you to have a preexisting valid supporter certificate, it is useless without one.&lt;br /&gt;If you want to use the advanced features you need to obtain booth a standard certificate and the feature upgrade key to unlock advanced functionality.</oldsource>
         <translation>기존 후원자 인증서를 입력하지 않고 기능 업그레이드 키를 사용하려고 합니다. (&lt;b&gt;웹 사이트에 굵은 글씨로 명시되어 있는&lt;/b) 이 유형의 키는 기존 후원자 인증서가 있어야 하며, 인증서가 없으면 쓸모가 없습니다.&lt;br /&gt;고급 기능을 사용하려면 표준 인증서와 기능 업그레이드 키를 모두 받아야 합니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3336"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3337"/>
         <source>You are attempting to use a Renew-Key without having entered a pre-existing supporter certificate. Please note that this type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b) requires you to have a pre-existing valid supporter certificate; it is useless without one.</source>
         <oldsource>You are attempting to use a Renew-Key without having a preexisting supporter certificate. Please note that these type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b&gt;) require you to have a preexisting supporter certificate, it is useless without one.</oldsource>
         <translation>기존 후원자 인증서를 입력하지 않고 갱신 키를 사용하려고 합니다. (&lt;b&gt;웹사이트에 굵은 글씨로 명시되어 있는&lt;/b) 이 유형의 키는 기존 후원자 인증서가 있어야 하며, 해당 인증서가 없으면 쓸모가 없습니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3341"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3342"/>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;u&gt;If you have not read the product description and obtained this key by mistake, please contact us via email (provided on our website) to resolve this issue.&lt;/u&gt;</source>
         <oldsource>&lt;br /&gt;&lt;br /&gt;&lt;u&gt;If you have not read the product description and got this key by mistake, please contact us by email (provided on our website) to resolve this issue.&lt;/u&gt;</oldsource>
         <translation>&lt;br /&gt;&lt;br /&gt;&lt;u&gt;제품 설명을 읽지 않고 실수로 이 키를 얻으신 경우 이메일 (홈페이지 제공)로 연락하여 이 문제를 해결해 주시기 바랍니다.&lt;/u&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3356"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3384"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3613"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3357"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3385"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3614"/>
         <source>Retrieving certificate...</source>
         <translation>인증서 검색 중...</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3372"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3373"/>
         <source>Sandboxie-Plus - Get EVALUATION Certificate</source>
         <translation>Sandboxie-Plus - 평가판 인증서 가져오기</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3372"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3373"/>
         <source>Please enter your email address to receive a free %1-day evaluation certificate, which will be issued to %2 and locked to the current hardware.
 You can request up to %3 evaluation certificates for each unique hardware ID.</source>
         <translation>%2로 발급되어 현재 하드웨어에 고정되는 무료 %1일 평가 인증서를 받으려면 이메일 주소를 입력하세요.
 고유 하드웨어 ID별로 최대 %3개의 평가 인증서를 요청할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3398"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3399"/>
         <source>Error retrieving certificate: %1</source>
         <oldsource>Error retriving certificate: %1</oldsource>
         <translation>인증서를 검색하는 중 오류 발생: %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3398"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3399"/>
         <source>Unknown Error (probably a network issue)</source>
         <translation>알 수 없는 오류 (아마도 네트워크 문제)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3457"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3458"/>
         <source>Developer</source>
         <translation>개발자</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3556"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3557"/>
         <source>The evaluation certificate has been successfully applied. Enjoy your free trial!</source>
         <translation>평가 인증서가 성공적으로 신청되었습니다. 무료 평가판을 즐기세요!</translation>
     </message>
@@ -7290,42 +7291,42 @@ You can request up to %3 evaluation certificates for each unique hardware ID.</s
         <translation type="vanished">인증서를 가져오는 중...</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3453"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3454"/>
         <source>Contributor</source>
         <translation>기여자</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3455"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3456"/>
         <source>Eternal</source>
         <translation>영구</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3459"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3460"/>
         <source>Business</source>
         <translation>비지니스</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3461"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3462"/>
         <source>Personal</source>
         <translation>개인</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3463"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3464"/>
         <source>Great Patreon</source>
         <translation>Great Patreon</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3465"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3466"/>
         <source>Patreon</source>
         <translation>Patreon</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3467"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3468"/>
         <source>Family</source>
         <translation>패밀리</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3469"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3470"/>
         <source>Home</source>
         <translation>홈</translation>
     </message>
@@ -7334,12 +7335,12 @@ You can request up to %3 evaluation certificates for each unique hardware ID.</s
         <translation type="vanished">기부</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3471"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3472"/>
         <source>Evaluation</source>
         <translation>평가</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3473"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3474"/>
         <source>Type %1</source>
         <translation>유형 %1</translation>
     </message>
@@ -7348,22 +7349,22 @@ You can request up to %3 evaluation certificates for each unique hardware ID.</s
         <translation type="vanished">표준</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3503"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3504"/>
         <source>Advanced</source>
         <translation>고급</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3505"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3506"/>
         <source>Advanced (L)</source>
         <translation>고급 (L)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3507"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3508"/>
         <source>Max Level</source>
         <translation>최대 수준</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3509"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3510"/>
         <source>Level %1</source>
         <translation>수준 %1</translation>
     </message>
@@ -7378,17 +7379,17 @@ You can request up to %3 evaluation certificates for each unique hardware ID.</s
         <translation>자동화에 필요한 후원자 인증서</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3548"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3549"/>
         <source>This certificate is unfortunately not valid for the current build, you need to get a new certificate or downgrade to an earlier build.</source>
         <translation>이 인증서는 현재 빌드에 유효하지 않습니다. 새 인증서를 가져오거나 이전 빌드로 다운그레이드해야 합니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3550"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3551"/>
         <source>Although this certificate has expired, for the currently installed version plus features remain enabled. However, you will no longer have access to Sandboxie-Live services, including compatibility updates and the online troubleshooting database.</source>
         <translation>이 인증서는 만료되었지만 현재 설치된 버전 및 기능에 대해서는 사용 가능한 상태로 유지됩니다. 그러나 호환성 업데이트 및 온라인 문제 해결 데이터베이스를 포함한  Sandboxie-Live 서비스에 더 이상 액세스할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3552"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3553"/>
         <source>This certificate has unfortunately expired, you need to get a new certificate.</source>
         <translation>이 인증서는 만료되었습니다. 새 인증서를 받아야 합니다.</translation>
     </message>
@@ -7467,7 +7468,7 @@ Right-click to copy</oldsource>
         <translation type="vanished">이 후원자 인증서가 만료되었습니다, &lt;a href=&quot;sbie://update/cert&quot;&gt;에서 업데이트된 인증서를 받으세요&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3225"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3226"/>
         <source>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;Plus features will be disabled in %1 days.&lt;/font&gt;</source>
         <translation>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;%1일 후에 추가 기능이 비활성화됩니다.&lt;/font&gt;</translation>
     </message>
@@ -7476,7 +7477,7 @@ Right-click to copy</oldsource>
         <translation type="vanished">&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;이 빌드 Plus 기능은 계속 사용 가능합니다.&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3229"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3230"/>
         <source>&lt;br /&gt;Plus features are no longer enabled.</source>
         <translation>&lt;br /&gt;Plus 기능이 더 이상 사용되지 않습니다.</translation>
     </message>
@@ -7509,7 +7510,7 @@ Right-click to copy</oldsource>
         <translation>샌드박스에서 열린 경로 설정</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3531"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3532"/>
         <source>This does not look like a certificate. Please enter the entire certificate, not just a portion of it.</source>
         <translation>인증서로 보이지 않습니다. 인증서 일부가 아닌 전체 인증서를 입력하세요.</translation>
     </message>
@@ -7522,7 +7523,7 @@ Right-click to copy</oldsource>
         <translation type="vanished">안타깝게도 이 인증서는 오래되었습니다.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3559"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3560"/>
         <source>Thank you for supporting the development of Sandboxie-Plus.</source>
         <translation>Sandboxie-Plus 개발을 지원해 주셔서 감사합니다.</translation>
     </message>
@@ -8469,7 +8470,7 @@ If you are a great patreaon supporter already, sandboxie can check online for an
         <location filename="Views/TraceView.cpp" line="288"/>
         <location filename="Views/TraceView.cpp" line="297"/>
         <location filename="Views/TraceView.cpp" line="571"/>
-        <location filename="Views/TraceView.cpp" line="687"/>
+        <location filename="Views/TraceView.cpp" line="693"/>
         <source>[All]</source>
         <translation>[모두]</translation>
     </message>
@@ -8539,17 +8540,17 @@ If you are a great patreaon supporter already, sandboxie can check online for an
         <translation>스택 추적 기능을 사용하려면 DbgHelp.dll 및 SymSrv.dll이 필요합니다. 이 기능을 다운로드하여 설치하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="Views/TraceView.cpp" line="730"/>
+        <location filename="Views/TraceView.cpp" line="736"/>
         <source>Save trace log to file</source>
         <translation>파일에 추적 로그 저장</translation>
     </message>
     <message>
-        <location filename="Views/TraceView.cpp" line="736"/>
+        <location filename="Views/TraceView.cpp" line="742"/>
         <source>Failed to open log file for writing</source>
         <translation>쓰기 위해 로그 파일을 열지 못했습니다</translation>
     </message>
     <message>
-        <location filename="Views/TraceView.cpp" line="756"/>
+        <location filename="Views/TraceView.cpp" line="762"/>
         <source>Saving TraceLog...</source>
         <translation>TraceLog 저장 중...</translation>
     </message>
@@ -8558,7 +8559,7 @@ If you are a great patreaon supporter already, sandboxie can check online for an
         <translation type="vanished">알 수 없음</translation>
     </message>
     <message>
-        <location filename="Views/TraceView.cpp" line="640"/>
+        <location filename="Views/TraceView.cpp" line="646"/>
         <source>%1 (%2)</source>
         <translation>%1 (%2)</translation>
     </message>
@@ -8568,7 +8569,7 @@ If you are a great patreaon supporter already, sandboxie can check online for an
         <translation>모니터 모드</translation>
     </message>
     <message>
-        <location filename="Views/TraceView.cpp" line="653"/>
+        <location filename="Views/TraceView.cpp" line="659"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
@@ -8576,7 +8577,7 @@ If you are a great patreaon supporter already, sandboxie can check online for an
 <context>
     <name>CTraceWindow</name>
     <message>
-        <location filename="Views/TraceView.cpp" line="824"/>
+        <location filename="Views/TraceView.cpp" line="830"/>
         <source>Sandboxie-Plus - Trace Monitor</source>
         <translation>추적 모니터</translation>
     </message>
@@ -10170,17 +10171,17 @@ This is done to prevent rogue processes inside the sandbox from creating a renam
     <message>
         <location filename="Forms/OptionsWindow.ui" line="1835"/>
         <source>Total CPU Rate Limit (%):</source>
-        <translation type="unfinished"></translation>
+        <translation>총 CPU 사용률 제한 (%):</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="1851"/>
         <source>Leave it blank to disable the setting (1-100)</source>
-        <translation type="unfinished"></translation>
+        <translation>이 설정을 비활성화하려면 빈칸으로 두세요 (1-100)</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="1861"/>
         <source>%</source>
-        <translation type="unfinished">%</translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="2051"/>

@@ -5,9 +5,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.17.6 / 5.72.6] - 2026-05-??
+
+### Fixed
+- fixed issue with hook registration
+- fixed high CPU usage caused by DWM with applications using custom titlebars (e.g., Delphi VCL)
 
 
-## [1.17.5 / 5.72.5] - 2026-04-??
+
+
+## [1.17.5 / 5.72.5] - 2026-05-02
 
 ### Added
 - added workaround for SBIE2205 OpenDesktop when requesting default desktop
@@ -16,6 +23,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - fixed box rename failing with "The parameter is incorrect" since 1.17.3, caused by multi-line section content being rejected by the new ContainsCRLF check in CIniFile::AddValue
 - fixed renamed sandbox not being re-selected in the UI after a successful rename
 - fixed sandboxed app tray icons not showing with `OpenWinClass=*` by proxying `Shell_NotifyIcon`; can be disabled with `UseShellNotifyIconProxy` (default enabled, supports `process` and `!process` selectors)
+- fixed track WS_EX_TOPMOST extended style, detect topmost state changes, and use appropriate HWND_TOPMOST vs HWND_TOP ordering to ensure correct border visibility and z-order when topmost status changes. [#5358](https://github.com/sandboxie-plus/Sandboxie/issues/5358)
 
 
 
@@ -52,10 +60,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - added "Label only" border mode option (`onlbl`, `ttllbl`, `alllbl`) that hides the colored border frame and shows only the sandbox name (or alias) label [#5239](https://github.com/sandboxie-plus/Sandboxie/pull/5239)
 - added MIDI workaround template for Windows 11 [#5183](https://github.com/sandboxie-plus/Sandboxie/issues/5183) [#5203](https://github.com/sandboxie-plus/Sandboxie/issues/5203#issuecomment-3938495163) (thanks xsmolasses)
 - added new tray customization options (Global Settings > Shell Integration > System Tray): [#5254](https://github.com/sandboxie-plus/Sandboxie/pull/5254)
-  - "Show icons in tray context menu" (`Options/TrayIcons`) — controls whether custom sandbox icons are displayed in the tray menu.
-  - "Show box alias name instead of box name in tray" (`Options/TrayUseAlias`) — displays the configured alias/display name in both compact and regular tray menus.
+  - "Show icons in tray context menu" (`Options/TrayIcons`) - controls whether custom sandbox icons are displayed in the tray menu.
+  - "Show box alias name instead of box name in tray" (`Options/TrayUseAlias`) - displays the configured alias/display name in both compact and regular tray menus.
   - "Show sandbox status as tooltip in tray list" (`Options/TrayStatusTip`) now supports tri-state behavior: unchecked = never, partial = while Ctrl or Shift is held (default), checked = always.
-  - "Show overlay icons for boxes in tray list" (`Options/TrayOverlayIcons`) — shows the same box-state overlays used in the main sandbox list (no-force, disk image mounted/unmounted, RAM disk, auto-delete) on tray icons in both the compact widget and the regular context menu.
+  - "Show overlay icons for boxes in tray list" (`Options/TrayOverlayIcons`) - shows the same box-state overlays used in the main sandbox list (no-force, disk image mounted/unmounted, RAM disk, auto-delete) on tray icons in both the compact widget and the regular context menu.
 - added border capture exclusion via `HideBordersFromCapture`
   - keeps border frames and labels out of screenshots and screen recordings; defaults to `CoverBoxedWindows`
 - added border label width and taskbar clipping options
@@ -78,19 +86,25 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - fixed duplicated boxes not preserving the original box group assignment
 - fixed double-clicking on a group's empty path/command line crash [#5253](https://github.com/sandboxie-plus/Sandboxie/pull/5253)
 - fixed compact tray box list clipping long sandbox names; width is now measured precisely per item using font metrics and scales correctly at any DPI [#5254](https://github.com/sandboxie-plus/Sandboxie/pull/5254)
-- fixed WOW64 registry view inheritance for relative key opens in `SbieDll`, preserving parent `KEY_WOW64_32KEY/KEY_WOW64_64KEY` semantics across `NtOpenKey`/`NtCreateKey` [#5171](https://github.com/sandboxie-plus/Sandboxie/issue/7171) [#5244](https://github.com/sandboxie-plus/Sandboxie/pull/5244)
+- fixed WOW64 registry view inheritance for relative key opens in `SbieDll`, preserving parent `KEY_WOW64_32KEY/KEY_WOW64_64KEY` semantics across `NtOpenKey`/`NtCreateKey` [#5171](https://github.com/sandboxie-plus/Sandboxie/issues/5171) [#5244](https://github.com/sandboxie-plus/Sandboxie/pull/5244)
 - fixed handle leak in `ScanStartMenu`: `IShellLinkW` and `IPersistFile` COM interfaces were never released in `ResolveShortcut`, permanently retaining handles (file, registry, icon) for every `.lnk` shortcut scanned; replaced raw pointers with `CComPtr` to ensure `Release()` on all exit paths
 - fixed parsing logic for `ClosedClsid` and `ClosedRT` settings [#5263](https://github.com/sandboxie-plus/Sandboxie/pull/5263)
 - FIXED SECURITY ISSUE ID-32: EditPassword Hash Entropy Loss, new passwords will be salted SHA-256 and Base64-encoded
   - Note: the fix only takes effect when the password is being set, existing passwords remain weak
+- FIXED SECURITY ISSUE ID-33
 - fixed Local Denial of Service (DoS) Vulnerability Exploitable by Sandboxed Process CVE-2026-32603 (reported by sammy12342)
-- fixed Sandboxie-Plus EditAdminOnly Bypass via INI CRLF Injection (reported by sammy12342)
-- fixed issues with GetRawInputDeviceInfoSlave (reported by sammy12342)
-- fixed an issue with RunSbieCtrl (reported by Yanchon918s)
-- fixed name validation in ProcessServer handlers (reported by Yanchon918s)
-- fixed parameter validation in NamedPipeServer (reported by Yanchon918s)
-- fixed file integrity issues with updater (reported by sammy12342)
-
+- FIXED SECURITY ISSUE ID-34
+- fixed Sandboxie-Plus EditAdminOnly Bypass via INI CRLF Injection CVE-2026-34458 (reported by sammy12342)
+- FIXED SECURITY ISSUE ID-35
+- fixed issues with GetRawInputDeviceInfoSlave CVE-2026-34459 (reported by sammy12342)
+- FIXED SECURITY ISSUE ID-36
+- fixed an issue with RunSbieCtrl CVE-2026-34461 (reported by Yanchon918s)
+- FIXED SECURITY ISSUE ID-37
+- fixed name validation in ProcessServer handlers CVE-2026-34462 (reported by Yanchon918s)
+- FIXED SECURITY ISSUE ID-38
+- fixed parameter validation in NamedPipeServer CVE-2026-34464 (reported by Yanchon918s)
+- FIXED SECURITY ISSUE ID-39
+- fixed Local Privilege Escalation via TOCTOU in UpdUtil Addon Installation CVE-2026-34596 (reported by sammy12342)
 
 
 ## [1.17.2 / 5.72.2] - 2026-02-18

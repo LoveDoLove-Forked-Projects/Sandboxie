@@ -6393,22 +6393,22 @@ Ez a fájl a Sandboxie része, és minden rajta végzett módosítás vissza les
         <translation>Kötet nincs csatolva</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3222"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3223"/>
         <source>This supporter certificate has expired, please &lt;a href=&quot;%1&quot;&gt;get an updated certificate&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3302"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3303"/>
         <source>&lt;b&gt;You have used %1/%2 evaluation certificates. No more free certificates can be generated.&lt;/b&gt;</source>
         <translation>&lt;b&gt;%1/%2 kiértékelő tanúsítványt használt. Több ingyenes tanúsítvány nem generálható.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3304"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3305"/>
         <source>&lt;b&gt;&lt;a href=&quot;_&quot;&gt;Get a free evaluation certificate&lt;/a&gt; and enjoy all premium features for %1 days.&lt;/b&gt;</source>
         <translation>&lt;b&gt;&lt;a href=&quot;_&quot;&gt;Kérjen ingyenes értékelő tanúsítványt&lt;/a&gt; és %1 napig élvezheti az összes prémium szolgáltatást.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3235"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3236"/>
         <source>This supporter certificate will &lt;font color=&apos;red&apos;&gt;expire in %1 days&lt;/font&gt;, please &lt;a href=&quot;%2&quot;&gt;get an updated certificate&lt;/a&gt;.</source>
         <oldsource>This supporter certificate has expired, please &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-renew-cert&quot;&gt;get an updated certificate&lt;/a&gt;.</oldsource>
         <translation type="unfinished">Ez a támogatói tanúsítvány lejárt, kérjük, &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-renew-cert&quot;&gt;szerezzen be frissített tanúsítványt&lt;/a&gt;.</translation>
@@ -6422,40 +6422,40 @@ Ez a fájl a Sandboxie része, és minden rajta végzett módosítás vissza les
         <translation type="vanished">Ez a támogatói tanúsítvány &lt;font color=&apos;red&apos;&gt;%1 nap múlva lejár&lt;/font&gt;. Kérjük, &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-renew-cert&quot;&gt;szerezzen be egy frissített tanúsítványt&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3270"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3271"/>
         <source>Expires in: %1 days</source>
         <oldsource>Expires: %1 Days ago</oldsource>
         <translation>Lejár: %1 nap múlva</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3274"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3275"/>
         <source>; eligible Patreons can always &lt;a href=&quot;https://xanasoft.com/get-supporter-certificate/&quot;&gt;obtain an updated certificate&lt;/a&gt; from xanasoft.com</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3286"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3287"/>
         <source>Options: %1</source>
         <translation>Opciók: %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3289"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3290"/>
         <source>Security/Privacy Enhanced &amp; App Boxes (SBox): %1</source>
         <translation>Javított biztonság/adatvédelem &amp; alkalmazáshomokozók (SBox): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3289"/>
         <location filename="Windows/SettingsWindow.cpp" line="3290"/>
         <location filename="Windows/SettingsWindow.cpp" line="3291"/>
         <location filename="Windows/SettingsWindow.cpp" line="3292"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3293"/>
         <source>Enabled</source>
         <translation>Engedélyezva</translation>
     </message>
     <message>
         <location filename="Windows/SettingsWindow.cpp" line="362"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3289"/>
         <location filename="Windows/SettingsWindow.cpp" line="3290"/>
         <location filename="Windows/SettingsWindow.cpp" line="3291"/>
         <location filename="Windows/SettingsWindow.cpp" line="3292"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3293"/>
         <source>Disabled</source>
         <translation>Letiltva</translation>
     </message>
@@ -6511,143 +6511,143 @@ Ez a fájl a Sandboxie része, és minden rajta végzett módosítás vissza les
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3290"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3291"/>
         <source>Encrypted Sandboxes (EBox): %1</source>
         <translation>Titkosított homokozók (EBox)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3291"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3292"/>
         <source>Network Interception (NetI): %1</source>
         <translation>Hálózati elfogás (NetI): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3292"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3293"/>
         <source>Sandboxie Desktop (Desk): %1</source>
         <translation>Sandboxie asztal (Desk): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3323"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3324"/>
         <source>This does not look like a Sandboxie-Plus Serial Number.&lt;br /&gt;If you have attempted to enter the UpdateKey or the Signature from a certificate, that is not correct, please enter the entire certificate into the text area above instead.</source>
         <translation>Ez nem úgy néz ki, mint egy Sandboxie-Plus sorozatszám.&lt;br /&gt;Ha egy tanúsítványból próbálta megadni az UpdateKey kulcsot vagy az aláírást, és ez nem helyes, írja be a teljes tanúsítványt a szövegmezőbe helyett.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3330"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3331"/>
         <source>You are attempting to use a feature Upgrade-Key without having entered a pre-existing supporter certificate. Please note that this type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b) requires you to have a pre-existing valid supporter certificate; it is useless without one.&lt;br /&gt;If you want to use the advanced features, you need to obtain both a standard certificate and the feature upgrade key to unlock advanced functionality.</source>
         <oldsource>You are attempting to use a feature Upgrade-Key without having entered a preexisting supporter certificate. Please note that these type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b&gt;) require you to have a preexisting valid supporter certificate, it is useless without one.&lt;br /&gt;If you want to use the advanced features you need to obtain booth a standard certificate and the feature upgrade key to unlock advanced functionality.</oldsource>
         <translation>Olyan funkció frissítési kulcsát próbálja használni, hogy nem adott meg egy már meglévő támogatói tanúsítványt. Kérjük, vegye figyelembe, hogy ehhez a kulcstípushoz (&lt;b&gt;ahogyan a webhelyen félkövéren szerepel&lt;/b) érvényes támogatói tanúsítvánnyal kell rendelkeznie; nélküle használhatatlan.&lt;br /&gt;Ha a speciális funkciókat szeretné használni, be kell szereznie egy szabványos tanúsítványt és a szolgáltatásfrissítési kulcsot is a speciális funkciók feloldásához.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3336"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3337"/>
         <source>You are attempting to use a Renew-Key without having entered a pre-existing supporter certificate. Please note that this type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b) requires you to have a pre-existing valid supporter certificate; it is useless without one.</source>
         <oldsource>You are attempting to use a Renew-Key without having a preexisting supporter certificate. Please note that these type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b&gt;) require you to have a preexisting supporter certificate, it is useless without one.</oldsource>
         <translation>Megújítási kulcsot próbál használni anélkül, hogy korábban már létező támogatói tanúsítványt adott volna meg. Kérjük, vegye figyelembe, hogy ehhez a kulcstípushoz (&lt;b&gt;ahogyan a webhelyen félkövéren szerepel&lt;/b) érvényes támogatói tanúsítvánnyal kell rendelkeznie; egy nélkül használhatatlan.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3341"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3342"/>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;u&gt;If you have not read the product description and obtained this key by mistake, please contact us via email (provided on our website) to resolve this issue.&lt;/u&gt;</source>
         <oldsource>&lt;br /&gt;&lt;br /&gt;&lt;u&gt;If you have not read the product description and got this key by mistake, please contact us by email (provided on our website) to resolve this issue.&lt;/u&gt;</oldsource>
         <translation>&lt;br /&gt;&lt;br /&gt;&lt;u&gt;Ha nem olvasta el a termékleírást, és véletlenül kapta meg ezt a kulcsot, kérjük, vegye fel velünk a kapcsolatot e-mailben (amely a webhelyünkön található) a probléma megoldása érdekében. &lt;/u&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3372"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3373"/>
         <source>Sandboxie-Plus - Get EVALUATION Certificate</source>
         <translation>Sandboxie-Plus – ÉRTÉKELÉSI bizonyítvány beszerzése</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3372"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3373"/>
         <source>Please enter your email address to receive a free %1-day evaluation certificate, which will be issued to %2 and locked to the current hardware.
 You can request up to %3 evaluation certificates for each unique hardware ID.</source>
         <translation>Kérjük, adja meg e-mail címét, hogy ingyenes %1 napos kiértékelő tanúsítványt kapjon, amelyet a(z) %2 címre állít ki, és az aktuális hardverhez zárolva lesz.
 Minden egyedi hardverazonosítóhoz legfeljebb %3 kiértékelő tanúsítványt kérhet.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3398"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3399"/>
         <source>Error retrieving certificate: %1</source>
         <oldsource>Error retriving certificate: %1</oldsource>
         <translation>Hiba a tanúsítvány lekérésekor: %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3398"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3399"/>
         <source>Unknown Error (probably a network issue)</source>
         <translation>Ismeretlen hiba (valószínűleg hálózati probléma)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3453"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3454"/>
         <source>Contributor</source>
         <translation>Közreműködő</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3455"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3456"/>
         <source>Eternal</source>
         <translation>Élettartam</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3457"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3458"/>
         <source>Developer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3459"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3460"/>
         <source>Business</source>
         <translation>Üzleti</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3461"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3462"/>
         <source>Personal</source>
         <translation>Személyes</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3463"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3464"/>
         <source>Great Patreon</source>
         <translation>Great Patreon</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3465"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3466"/>
         <source>Patreon</source>
         <translation>Patreon</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3467"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3468"/>
         <source>Family</source>
         <translation>Családi</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3471"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3472"/>
         <source>Evaluation</source>
         <translation>Értékelés</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3473"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3474"/>
         <source>Type %1</source>
         <translation>%1 típus</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3503"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3504"/>
         <source>Advanced</source>
         <translation>Speciális</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3505"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3506"/>
         <source>Advanced (L)</source>
         <translation>Speciális (L)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3507"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3508"/>
         <source>Max Level</source>
         <translation>Max. színt</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3509"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3510"/>
         <source>Level %1</source>
         <translation>Színt %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3662"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3663"/>
         <source>Autocomplete feature requires your consent to proceed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3664"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3665"/>
         <source>If you are unsure about the settings displayed in the autocomplete popup, we strongly recommend consulting the software&apos;s documentation or source code before proceeding. Enabling this feature without proper understanding may lead to unintended consequences, for which you will be solely responsible.
 
 Choose autocomplete mode:
@@ -6656,32 +6656,32 @@ Choose autocomplete mode:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3672"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3673"/>
         <source>Manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3673"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3674"/>
         <source>Triggers autocomplete suggestions with %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3675"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3676"/>
         <source>While Typing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3676"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3677"/>
         <source>Triggers autocomplete suggestions while typing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3679"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3680"/>
         <source>Keeps autocomplete suggestions disabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3678"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3679"/>
         <source>Cancel</source>
         <translation type="unfinished">Mégse</translation>
     </message>
@@ -6696,17 +6696,17 @@ Choose autocomplete mode:
         <translation>Támogatói tanúsítvány szükséges az automatizáláshoz</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3548"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3549"/>
         <source>This certificate is unfortunately not valid for the current build, you need to get a new certificate or downgrade to an earlier build.</source>
         <translation>Ez a tanúsítvány sajnos nem érvényes a jelenlegi buildre, új tanúsítványt kell beszereznie, vagy váltani kell egy korábbi buildre.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3550"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3551"/>
         <source>Although this certificate has expired, for the currently installed version plus features remain enabled. However, you will no longer have access to Sandboxie-Live services, including compatibility updates and the online troubleshooting database.</source>
         <translation>Bár ez a tanúsítvány lejárt, a jelenleg telepített verzióra a plus funkciók továbbra is engedélyezve maradnak. A továbbiakban azonban nem fog hozzáférni a Sandboxie-Live szolgáltatásokhoz, beleértve a kompatibilitási frissítéseket és az online hibaelhárítási adatbázist.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3552"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3553"/>
         <source>This certificate has unfortunately expired, you need to get a new certificate.</source>
         <translation>Ez a tanúsítvány sajnos lejárt. Új tanúsítványt kell beszereznie</translation>
     </message>
@@ -6804,17 +6804,17 @@ Choose autocomplete mode:
         <translation>Kérjük, adjon meg egy parancsot</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3227"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3228"/>
         <source>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;For the current build Plus features remain enabled&lt;/font&gt;, but you no longer have access to Sandboxie-Live services, including compatibility updates and the online troubleshooting database.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3305"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3306"/>
         <source>You can request a free %1-day evaluation certificate up to %2 times per hardware ID.</source>
         <translation>Hardverazonosítónként legfeljebb %2 alkalommal kérhet ingyenes %1 napos kiértékelő tanúsítványt.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3225"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3226"/>
         <source>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;Plus features will be disabled in %1 days.&lt;/font&gt;</source>
         <translation>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;A plus funkciók %1 napon belül le lesznek tiltva.&lt;/font&gt;</translation>
     </message>
@@ -6831,24 +6831,24 @@ Right-click to copy</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3229"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3230"/>
         <source>&lt;br /&gt;Plus features are no longer enabled.</source>
         <translation>&lt;br /&gt;A plus funkciók már nincsenek engedélyezve.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3272"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3273"/>
         <source>Expired: %1 days ago</source>
         <translation>Lejárt: %1 napja</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3356"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3384"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3613"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3357"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3385"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3614"/>
         <source>Retrieving certificate...</source>
         <translation>Tanúsítvány lehívása...</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3469"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3470"/>
         <source>Home</source>
         <translation>Home</translation>
     </message>
@@ -6868,33 +6868,33 @@ Right-click to copy</oldsource>
         <translation>Útvonal megnyitása a homokozóban</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3531"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3532"/>
         <source>This does not look like a certificate. Please enter the entire certificate, not just a portion of it.</source>
         <translation>Ez nem úgy néz ki, mint egy tanúsítvány. Kérjük, adja meg a teljes tanúsítványt, ne csak egy részét.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3556"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3557"/>
         <source>The evaluation certificate has been successfully applied. Enjoy your free trial!</source>
         <translation>Az értékelési tanúsítvány sikeresen alkalmazásra került. Élvezze az ingyenes próbaidőszakot!</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3559"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3560"/>
         <source>Thank you for supporting the development of Sandboxie-Plus.</source>
         <translation>Köszönjük, hogy támogatja a Sandboxie-Plus fejlesztését.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3561"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3562"/>
         <source>
 This is a temporary Patreon certificate, valid for 3 months. Once it nears expiration, you can obtain a new certificate online that will be valid for the full term.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3599"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3600"/>
         <source>A mandatory security update for your Sandboxie-Plus Supporter Certificate is required. Would you like to download the updated certificate now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3600"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3601"/>
         <source>Auto update in future</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7027,7 +7027,7 @@ This is a temporary Patreon certificate, valid for 3 months. Once it nears expir
         <translation>Valóban törli a kiválasztott helyi sablon(oka)t?</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3660"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3661"/>
         <source>Autocomplete Consent Required</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7827,7 +7827,7 @@ Ha Ön már nagy támogatója a Patreonnak, a Sandboxie online ellenőrizheti ta
         <location filename="Views/TraceView.cpp" line="288"/>
         <location filename="Views/TraceView.cpp" line="297"/>
         <location filename="Views/TraceView.cpp" line="571"/>
-        <location filename="Views/TraceView.cpp" line="687"/>
+        <location filename="Views/TraceView.cpp" line="693"/>
         <source>[All]</source>
         <translation>Mind</translation>
     </message>
@@ -7897,22 +7897,22 @@ Ha Ön már nagy támogatója a Patreonnak, a Sandboxie online ellenőrizheti ta
         <translation>A veremnyomkövetési funkció használatához a DbgHelp.dll és a SymSrv.dll fájl szükséges. Letölti és telepíti őket?</translation>
     </message>
     <message>
-        <location filename="Views/TraceView.cpp" line="730"/>
+        <location filename="Views/TraceView.cpp" line="736"/>
         <source>Save trace log to file</source>
         <translation>Nyomkövetési napló mentése fájlba</translation>
     </message>
     <message>
-        <location filename="Views/TraceView.cpp" line="736"/>
+        <location filename="Views/TraceView.cpp" line="742"/>
         <source>Failed to open log file for writing</source>
         <translation>Naplófájl megníitása íráshoz sikertelen</translation>
     </message>
     <message>
-        <location filename="Views/TraceView.cpp" line="756"/>
+        <location filename="Views/TraceView.cpp" line="762"/>
         <source>Saving TraceLog...</source>
         <translation>Nyomkövetési napló mentése...</translation>
     </message>
     <message>
-        <location filename="Views/TraceView.cpp" line="640"/>
+        <location filename="Views/TraceView.cpp" line="646"/>
         <source>%1 (%2)</source>
         <translation>%1 (%2)</translation>
     </message>
@@ -7922,7 +7922,7 @@ Ha Ön már nagy támogatója a Patreonnak, a Sandboxie online ellenőrizheti ta
         <translation>Megfigyelési mód</translation>
     </message>
     <message>
-        <location filename="Views/TraceView.cpp" line="653"/>
+        <location filename="Views/TraceView.cpp" line="659"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
@@ -7930,7 +7930,7 @@ Ha Ön már nagy támogatója a Patreonnak, a Sandboxie online ellenőrizheti ta
 <context>
     <name>CTraceWindow</name>
     <message>
-        <location filename="Views/TraceView.cpp" line="824"/>
+        <location filename="Views/TraceView.cpp" line="830"/>
         <source>Sandboxie-Plus - Trace Monitor</source>
         <translation>Sandboxie-Plus - nyomkövetés</translation>
     </message>
