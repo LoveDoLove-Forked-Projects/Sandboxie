@@ -5,6 +5,56 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.18.0 / 5.73.0] - 2026-06-??
+
+### Fixed
+- fixed expected non-user SID profile and shell lookup noise by suppressing matching SBIE1406/SBIE1412 and derivative SBIE1204 FileRootPath messages [#5427](https://github.com/sandboxie-plus/Sandboxie/pull/5427)
+
+
+
+## [1.17.9 / 5.72.9] - 2026-06-15
+
+### Changed
+- updated bundled ImDisk driver to 3.0.3
+
+
+
+## [1.17.8 / 5.72.8] - 2026-06-14
+
+### Added
+- added `DisableCustomTitleOpt=[process,][y|n]` to allow `[#]` Sandboxie title markers on windows with custom title bars (Delphi VCL, Qt, Electron) that were previously skipped to prevent DWM repaint CPU loops [#5387](https://github.com/sandboxie-plus/Sandboxie/issues/5387)
+
+### Changed
+- updated bundled ImDisk driver to 3.0.2 [#5419](https://github.com/sandboxie-plus/Sandboxie/issues/5419)
+
+### Fixed
+- fixed suppress logs for expected non-user SIDs [#5422](https://github.com/sandboxie-plus/Sandboxie/pull/5422)
+- fixed SbieSvc.exe SBIE2218/2219 error when run program as administrator [#5417](https://github.com/sandboxie-plus/Sandboxie/issues/5417)
+- fixed explorer.exe crashes in Application Compartment when Huorong Security is installed [#5423](https://github.com/sandboxie-plus/Sandboxie/issues/5423)
+
+
+
+## [1.17.7 / 5.72.7] - 2026-06-07
+
+### Added
+- added a Global Settings checkbox for `ForceBoxDocs` under Program Control > Force Process Options
+
+### Changed
+- disabled rich text acceptance in 'Edit ini Section' [baa6968](https://github.com/sandboxie-plus/Sandboxie/commit/baa6968420e0ebd6b4cd93821cf019fcd0e0fc35)
+- extended completion system with context-aware filtering, improved INI key resolution, regex updates, and tooltip placement enhancements [6db2a04](https://github.com/sandboxie-plus/Sandboxie/commit/6db2a04f805b49a049b309212bfa8e3a8497ad99)
+
+### Fixed
+- fixed crash in VMware when running inside sandbox caused by NtQueryDirectoryObject hook returning non-null-terminated strings and uninitialized padding bytes in OBJECT_DIRECTORY_INFORMATION structures, which caused QueryDosDeviceW to crash in wcscmp [#5390](https://github.com/sandboxie-plus/Sandboxie/issues/5390)
+- added short-name fallback cache and heuristics [#5404](https://github.com/sandboxie-plus/Sandboxie/pull/5404)
+- fixed addon setup not working introduced in a recent build
+- fixed starting from version 1.17.4, using the 'Sandbox with Data Protection' type box causes PowerShell to wait indefinitely, while there is no such bug with other types [#5408](https://github.com/sandboxie-plus/Sandboxie/issues/5408)
+- fixed importing encrypted box no longer creates encrypted image in v1.17.6 [#5399](https://github.com/sandboxie-plus/Sandboxie/issues/5399)
+- fixed EditorSettings fuzzy matching not applied, showing few/no completion entries, and table cell highlighting not updating
+- fixed error enumerating and deleting folder [#5406](https://github.com/sandboxie-plus/Sandboxie/issues/5406)
+- fixed black box import/export when 'ProtectAdminOnly=y' (default) and SandMan does not run as admin
+
+
+
 ## [1.17.6 / 5.72.6] - 2026-05-17
 
 ### Added
@@ -17,8 +67,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
   - the new format is 1:1 compatible with portable boxes, allowing to just unpack an export archive and add the boxes as portable
 
 ### Fixed
-- fixed issue with hook registration
-- fixed high CPU usage caused by DWM with applications using custom title bars (e.g., Delphi VCL)
+- FIXED SECURITY ISSUE ID-40: issue with APC injection vulnerability
+- fixed high CPU usage caused by DWM with applications using custom title bars (e.g. Delphi VCL)
 
 
 
@@ -28,6 +78,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - added workaround for SBIE2205 OpenDesktop when requesting default desktop
 
 ### Fixed
+- fixed Epic Games not launching [#5281](https://github.com/sandboxie-plus/Sandboxie/issues/5281) [#5303](https://github.com/sandboxie-plus/Sandboxie/issues/5303) [#5344](https://github.com/sandboxie-plus/Sandboxie/pull/5344)
 - fixed box rename failing with "The parameter is incorrect" since 1.17.3, caused by multi-line section content being rejected by the new ContainsCRLF check in CIniFile::AddValue
 - fixed renamed sandbox not being re-selected in the UI after a successful rename
 - fixed sandboxed app tray icons not showing with `OpenWinClass=*` by proxying `Shell_NotifyIcon`; can be disabled with `UseShellNotifyIconProxy` (default enabled, supports `process` and `!process` selectors)
@@ -234,7 +285,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.16.5 / 5.71.5] - 2025-11-04
 
 ### Added
-- Enhanced INI Editor: Major improvements to the "Edit INI Section" dialog.
+- Enhanced INI Editor: Major improvements to the "Edit ini Section" dialog.
   - Dedicated Editor Settings: A new "Editor Settings" window for configuring all INI editor behaviour.
   - Setting Validation: INI keys are now visually validated against `SbieSettings.ini` to catch configuration errors. (1.16.2)
   - Contextual Tooltips: Tooltips for INI keys with metadata sourced from `SbieSettings.ini`, and configurable verbosity levels. (1.16.2, 1.16.4)
