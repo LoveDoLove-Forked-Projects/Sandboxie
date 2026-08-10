@@ -194,6 +194,19 @@ bool CFileFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex& 
 	return false;
 }
 
+bool CFileFilterProxyModel::lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const
+{
+    QFileSystemModel* fileModel = qobject_cast<QFileSystemModel*>(sourceModel());
+    if (fileModel) {
+        bool leftIsDir = fileModel->isDir(source_left);
+        bool rightIsDir = fileModel->isDir(source_right);
+        if (leftIsDir != rightIsDir)
+            return sortOrder() == Qt::AscendingOrder ? leftIsDir : !leftIsDir;
+    }
+
+    return QSortFilterProxyModel::lessThan(source_left, source_right);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////
 // CFileView
 
@@ -722,6 +735,16 @@ static HRESULT deleteShellItems(const QStringList& Files, HWND parentWindow)
     return SUCCEEDED(hr) && aborted ? HRESULT_FROM_WIN32(ERROR_CANCELLED) : hr;
 }
 
+static bool IsSameOrDescendantPath(const QString& Path, const QString& Parent)
+{
+    if (Path.compare(Parent, Qt::CaseInsensitive) == 0)
+        return true;
+
+    return Path.startsWith(Parent, Qt::CaseInsensitive) &&
+        (Parent.endsWith("\\") ||
+            (Path.length() > Parent.length() && Path.at(Parent.length()) == '\\'));
+}
+
 
 void CFileView::OnFileMenu(const QPoint&)
 {
@@ -736,9 +759,9 @@ void CFileView::OnFileMenu(const QPoint&)
 
         bool bFound = false;
         foreach(const QString & File, Files) {
-            if (BoxedPath.contains(File))
+            if (IsSameOrDescendantPath(BoxedPath, File))
                 bFound = true;
-            else if (File.contains(BoxedPath))
+            else if (IsSameOrDescendantPath(File, BoxedPath))
                 Files.removeOne(File);
         }
 
