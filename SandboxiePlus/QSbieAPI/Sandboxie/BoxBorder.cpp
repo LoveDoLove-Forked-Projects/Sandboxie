@@ -1002,11 +1002,20 @@ static std::wstring GetBoxDisplayName(CSandBox* pBox)
 	if (!pBox)
 		return std::wstring();
 
-	QString alias = pBox->GetText("BoxAlias").trimmed();
-	if (!alias.isEmpty())
-		return alias.toStdWString();
+	// 0 - name
+	// 1 - alias
+	// 2 - name and alias
 
-	return pBox->GetName().toStdWString();
+	int aliasDisplayMode = pBox->GetAPI()->GetGlobalSettings()->GetNum("BoxAliasDisplayMode", 2);
+	if (aliasDisplayMode < 0 || aliasDisplayMode > 2)
+		aliasDisplayMode = 2;
+	QString BoxName = pBox->GetName().replace("_", " ");
+	QString Alias = pBox->GetText("BoxAlias").trimmed();
+	if (aliasDisplayMode == 1 || Alias.isEmpty())
+		return BoxName.toStdWString();
+	if (aliasDisplayMode == 2 && Alias.compare(BoxName, Qt::CaseInsensitive) != 0)
+		return QString("%1 (%2)").arg(Alias, BoxName).toStdWString();
+	return Alias.toStdWString();
 }
 
 static bool IsCoverBoxedWindowsEnabled(SBoxBorder* m, CSandBox* pBox, DWORD nowTick)
@@ -1228,7 +1237,11 @@ void CBoxBorder::TimerProc()
 	bool outsideChanged = m->MainBorder.outside != boxOutside;
 	bool labelModeChanged = boxMode != eBorderAllWindows && boxMode != eBorderAllWindowsLabelOnly &&
 		m->MainBorder.labelMode != boxLabelMode;
-	if (m->pCurrentBox != pProcessBox.data() || m->CachedFocusBoxMode != boxMode || outsideChanged || labelModeChanged)
+	bool usesFocusedBorder = pProcessBox && boxMode != eBorderOff &&
+		boxMode != eBorderAllWindows && boxMode != eBorderAllWindowsLabelOnly;
+	std::wstring boxDisplayName = usesFocusedBorder ? GetBoxDisplayName(pProcessBox.data()) : std::wstring();
+	bool displayNameChanged = usesFocusedBorder && m->MainBorder.boxName != boxDisplayName;
+	if (m->pCurrentBox != pProcessBox.data() || m->CachedFocusBoxMode != boxMode || outsideChanged || labelModeChanged || displayNameChanged)
 	{
 		m->pCurrentBox = pProcessBox.data();
 		m->CachedFocusBoxMode = boxMode;
@@ -1265,7 +1278,7 @@ void CBoxBorder::TimerProc()
 			SetLayeredWindowAttributes(m->MainBorder.hWnd, 0, m->MainBorder.alpha, LWA_ALPHA);
 
 			// Store sandbox name and create label font
-			m->MainBorder.boxName = GetBoxDisplayName(pProcessBox.data());
+			m->MainBorder.boxName = boxDisplayName;
 			UpdateBorderLabelFont(m->MainBorder, m->MainBorder.hWnd);
 		}
 	}
