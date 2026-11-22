@@ -5,12 +5,22 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
-## [1.19.1 / 5.74.1] - 2026-10-??
+## [1.19.2 / 5.74.2] - 2026-12-??
+
+### Fixed
+- fixed incorrect pending-change highlighting and Apply behavior for AI Integration settings
+
+
+
+## [1.19.1 / 5.74.1] - 2026-11-21
 
 ### Added
 - added line numbers to the built-in INI section editors, with an Advanced Editor Settings toggle and Ctrl+G destination highlighting; copying and saving exclude the line numbers
+- added per-dialog GUID name controls to Rename Sandbox and the New Box wizard, with alias overwrite confirmation; GUID-like names offer regeneration without being copied into aliases, and the global GUID option only supplies the wizard default
+- added batch sandbox name and alias editing with Previous/Next draft navigation; OK saves and advances, the final OK saves remaining drafts, and Cancel warns before discarding unsaved edits
 - added configurable sandbox border labels on all four window edges through `BorderLabelPosition`, with adjustable position, stacked or rotated side text, fixed/adaptive placement, and a dedicated Box Border tab in sandbox options
 - added customizable sandbox border label fonts with native style and writing-system selection, GDI preview, synchronized point size, immediate font-only Apply, and reset to legacy defaults
+- added `CustomProcessCommandLine` to conditionally add, remove, replace, or clear sandboxed process arguments
 - added opt-in, per-process `FakeProcessMitigations` compatibility reporting for dynamic-code and extension-point restrictions without changing actual Windows mitigation enforcement
 - added an opt-in MCP server to SandMan, so an AI agent can help troubleshoot a sandbox: it is started from the new "Troubleshoot with an AI Agent" toolbar button, listens on a local named pipe only, and stays off until it is explicitly enabled
 - added `SbieMcp.exe`, a stdio bridge that connects any MCP capable AI client to a running SandMan
@@ -38,10 +48,25 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - fixed empty or stale App Compatibility lists; added prelisting, scan status and manual checking [#5718](https://github.com/sandboxie-plus/Sandboxie/issues/5718)
 - fixed severe slowdowns (e.g. FPS drops in games) in sandboxed applications that often call `GetUserDefaultUILanguage`, `LoadString`, `FindResource` or `FormatMessage`: the temporary impersonation around each system call reset ntdll's cached UI language settings, so every lookup re-read them from the registry [#5628](https://github.com/sandboxie-plus/Sandboxie/pull/5628)
 - fixed reversed Yes/No handling when enabling a disabled or user-restricted sandbox
+- fixed issues with new Administrator protection [#5703](https://github.com/sandboxie-plus/Sandboxie/issues/5703)
 - Fix heap corruption on the box border thread [#5722](https://github.com/sandboxie-plus/Sandboxie/pull/5722)
 - Fix process creations serializing on the configuration lock [#5728](https://github.com/sandboxie-plus/Sandboxie/pull/5728)
 - Fix main image path letter case mismatch with the launch command line [#5729](https://github.com/sandboxie-plus/Sandboxie/pull/5729)
-
+- fixed SandMan crashing on exit (often after a ~30 second hang) when a box script was blocked on a call into the UI: stopping the script engine no longer deadlocks and its pending calls are cancelled instead of being left behind by a terminated thread
+- fixed SandMan crashing at startup when foreign code injected into the process touched Qt before the main thread, making Qt 6.8 treat the wrong thread as the main thread; MiscHelpers no longer creates a QObject during DLL initialization
+- fixed SandMan crashing when finishing the New Box wizard if the box list was not refreshed after creating the box, `CreateBox` now always reloads the box list
+- fixed an uncaught `bad_alloc` when a foreign window reported an absurd title length while SandMan enumerated windows
+- fixed SandMan crashing when the script engine could not allocate its stacks (low memory or third-party software blocking it); the script now fails with an error instead
+- fixed a crash in the Run Sandboxed dialog when it was closed while one of its nested dialogs was open
+- fixed the message log view growing without limit, which could exhaust memory in long sessions
+- fixed `~CSbieObject` dereferencing `theAPI` after it was released during shutdown
+- fixed a crash when dragging a box to a position past the end of its group in the box view
+- fixed a crash when an issue report upload finished after its dialog had been closed
+- fixed a crash when a process event arrived for a process whose box had been removed from the configuration, removed boxes now also drop their processes from the global process list
+- fixed a crash in the Options and Global Settings windows when a deferred layout update ran after the window was closed
+- fixed a crash on exit with the Troubleshooting Wizard open, its shadow boxes are now discarded while the API is still available
+- worked around a Qt 6.8 crash when activating a window while a modal dialog without a native window was shown
+- fixed SBIE2218 `[86 / 00000005]` and a hanging requester when elevating a program in a box with Windows Administrator Protection enabled
 
 
 
